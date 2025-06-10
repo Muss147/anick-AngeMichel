@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="Sweet-Vows - Wedding HTML Template">
+
+		<title>Anick & Ange-Michel | LoveLand</title>
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/media/favicon.png')}}">
+
+		<!-- All CSS files -->
+		<link rel="stylesheet" href="{{asset('assets/css/vendor/bootstrap.min.css')}}">
+		<link rel="stylesheet" href="{{asset('assets/css/vendor/fontawsome.css')}}">
+		<link rel="stylesheet" href="{{asset('assets/css/vendor/slick.css')}}">
+		<link rel="stylesheet" href="{{asset('assets/css/vendor/animate.min.css')}}">
+		<link rel="stylesheet" href="{{asset('assets/css/app.css')}}">
+		
+		<style type="text/css">
+		.logo.heading {
+			margin-bottom: 0;
+			font-family: "Playfair Display", serif;
+			font-size: 1.5rem;
+			font-weight: 700;
+			line-height: 120%;
+			letter-spacing: -0.49px;
+		}
+		</style>
+	</head>
+
+	<body>
+		<main
+			class="x-hidden">
+			<!-- Header Area Start -->
+			<header>
+				<nav class="main-menu">
+					<div class="container-fluid">
+						<div class="main-menu__block">
+							<div class="main-menu__left">
+								<div class="main-menu__logo">
+									<a href="{{path('app_front')}}" class="logo heading">
+										<span>Anick &</span> Ange-Michel
+									</a>
+								</div>
+							</div>
+							<div class="main-menu__nav">
+								<ul class="main-menu__list">
+									<li>
+										<a href="{{path('app_front')}}" class="active">Acceuil</a>
+									</li>
+									<li>
+										<a href="#about">Présentations</a>
+									</li>
+									<li>
+										<a href="#story">Programme</a>
+									</li>
+									<li>
+										<a href="#gallery">Galerie</a>
+									</li>
+									<li>
+										<a href="#temoignages">Témoignages</a>
+									</li>
+								</ul>
+							</div>
+							<div class="main-menu__right">
+								<a href="#inquiry" class="cus-btn d-xl-flex d-none">
+									RSVZ
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
+										<g clip-path="url(#clip0_9589_953)">
+											<path d="M2.72936 16.4958C2.27959 16.046 1.88017 15.5685 1.52537 15.0762C0.909202 15.4623 0.452405 15.824 0.229889 16.0099C0.140545 16.0845 0.119405 16.2129 0.180061 16.3122C0.642483 17.0698 2.6544 20.0927 5.58245 20.5754C6.8769 20.7888 8.16086 20.4744 9.24972 20.0082C7.30656 19.5107 4.74123 18.5078 2.72936 16.4958Z" fill="#43273A"/>
+											<path d="M22.7655 15.0762C22.4107 15.5686 22.0112 16.0461 21.5615 16.4958C19.5495 18.5078 16.9843 19.5107 15.0411 20.0082C16.13 20.4744 17.4139 20.7888 18.7084 20.5754C21.6364 20.0927 23.6483 17.0698 24.1108 16.3122C24.1714 16.2129 24.1503 16.0846 24.0609 16.0099C23.8385 15.824 23.3817 15.4622 22.7655 15.0762Z" fill="#43273A"/>
+											<path d="M7.25844 10.7183C7.25844 10.2504 7.2891 9.79143 7.34427 9.34312C4.60846 7.43264 1.36358 7.00696 0.40527 6.92025C0.256957 6.90684 0.133066 7.03073 0.146473 7.17904C0.24852 8.3062 0.818848 12.5969 3.7236 15.5017C5.65527 17.4333 8.19955 18.3325 10.0191 18.7482C8.87502 17.0885 7.25844 14.1374 7.25844 10.7183Z" fill="#43273A"/>
+											<path d="M23.8857 6.92025C22.9274 7.00696 19.6825 7.43264 16.9467 9.34317C17.0019 9.79143 17.0325 10.2504 17.0325 10.7183C17.0325 14.1375 15.4159 17.0885 14.2718 18.7482C16.0914 18.3324 18.6357 17.4333 20.5674 15.5016C23.4721 12.5969 24.0425 8.30615 24.1445 7.179C24.1579 7.03073 24.034 6.90684 23.8857 6.92025Z" fill="#43273A"/>
+											<path d="M15.6263 10.718C15.6263 14.7589 13.0386 18.1401 12.3255 18.9951C12.2317 19.1076 12.0593 19.1076 11.9655 18.9951C11.2524 18.1401 8.66466 14.7589 8.66466 10.718C8.66466 6.67708 11.2524 3.29594 11.9655 2.44094C12.0593 2.32844 12.2317 2.32844 12.3255 2.44094C13.0386 3.29594 15.6263 6.67713 15.6263 10.718Z" fill="#43273A"/>
+										</g>
+										<defs>
+											<clipPath id="clip0_9589_943">
+												<rect width="24" height="24" fill="white" transform="translate(0.145508 -0.5)"/>
+											</clipPath>
+										</defs>
+									</svg>
+									<span></span>
+								</a>
+								<a href="#" class="main-menu__toggler mobile-nav__toggler">
+									<i class="fa fa-bars"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</header>
+			<!-- Header Area end -->
+
+			<!-- Hero Section Start -->
+			<section class="hero-banner">
+				<div class="content">
+					<div class="container-fluid">
+						<div class="row align-items-center">
+							<div class="col-xl-6 col-lg-6 col-md-6">
+								<div class="text-block mb-xxl-32 mb-0 wow fadeInUp" data-wow-delay="2.1s">
+									<img src="{{asset('assets/media/banner/flower-text.png')}}" alt="" class="flower-image mb-32">
+									<h1 class="title mb-32">Anick
+										<span class="font-sec-2 color-primary">
+											&
+										</span>
+										<br>
+										Ange-Michel</h1>
+									<div class="wedding-date mb-32">
+										<h4>05 . 07 . 2025</h4>
+									</div>
+									<p class="title-text wow fadeInUp" data-wow-delay="0.35s">Les familles DJÉDJÉ & SIÉ
+										<br>
+										ont le bonheur de vous convier au mariage de leurs enfants...</p>
+								</div>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-12">
+								<div class="banner-image text-center">
+									<img src="{{asset('assets/media/banner/banner-image-1.png')}}" class="wow fadeInUp" alt="" data-wow-delay="2.2s">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Hero Section End -->
+
+			<!-- About Section Start -->
+			<section class="about py-80" id="about">
+				<div class="container-fluid">
+					<div class="heading mb-48">
+						<ul class="mb-16">
+							<li class="bold-text color-primary text-uppercase">
+								Présentations
+							</li>
+						</ul>
+						<h2>À propos des 
+							<span>mariés</span>
+						</h2>
+					</div>
+					<div class="row align-items-center row-gap-4">
+						<div class="col-xl-6 col-lg-6 wow fadeInUp" alt="" data-wow-delay="500ms">
+							<div class="row align-items-center row-gap-sm-4 row-gap-1 text-sm-start text-center">
+								<div class="col-lg-6 col-md-6 col-sm-6">
+									<div class="img-box">
+										<img src="{{asset('assets/media/about/about-image-2.png')}}" alt="" class="w-100">
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6">
+									<p class="bold-text color-primary mb-8">
+										La mariée
+									</p>
+									<h4 class="mb-16">Anick DJÉDJÉ</h4>
+									<p class="mb-32">Femme de cœur et de caractère, Anick illumine chaque pièce par sa bienveillance et son sourire sincère. Passionnée par la vie, elle cultive avec douceur l’art de rassembler ceux qu’elle aime. Authentique, drôle et profondément humaine, elle incarne une énergie rassurante qui touche et inspire. À ses côtés, le mot “partage” prend tout son sens.</p>
+									<ul class="unstyled social-icons justify-content-sm-start justify-content-center">
+										<li>
+											<a href="">
+												<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none"><path d="M17.625 5.625C18.0131 5.625 18.3281 5.31 18.3281 4.92188V0.703125C18.3281 0.315 18.0131 0 17.625 0H13.4062C10.6922 0 8.48437 2.20781 8.48437 4.92188V8.4375H6.375C5.98687 8.4375 5.67188 8.7525 5.67188 9.14062V13.3594C5.67188 13.7475 5.98687 14.0625 6.375 14.0625H8.48437V23.2969C8.48437 23.685 8.79937 24 9.1875 24H13.4062C13.7944 24 14.1094 23.685 14.1094 23.2969V14.0625H16.9219C17.2655 14.0625 17.5589 13.8141 17.6156 13.4752L18.3188 9.25641C18.3525 9.0525 18.2953 8.84391 18.1617 8.68594C18.0281 8.52844 17.8317 8.4375 17.625 8.4375H14.1094V5.625H17.625ZM13.4062 9.84375H16.7948L16.3261 12.6562H13.4062C13.0181 12.6562 12.7031 12.9713 12.7031 13.3594V22.5938H9.89062V13.3594C9.89062 12.9713 9.57562 12.6562 9.1875 12.6562H7.07812V9.84375H9.1875C9.57562 9.84375 9.89062 9.52875 9.89062 9.14062V4.92188C9.89062 2.98359 11.468 1.40625 13.4062 1.40625H16.9219V4.21875H13.4062C13.0181 4.21875 12.7031 4.53375 12.7031 4.92188V9.14062C12.7031 9.52875 13.0181 9.84375 13.4062 9.84375Z"/></svg>
+											</a>
+										</li>
+										<li>
+											<a href="">
+												<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none"><path d="M14.2418 10.1624L22.9842 0H20.9125L13.3215 8.82384L7.25852 0H0.265625L9.43399 13.3432L0.265625 24H2.33742L10.3538 14.6817L16.7567 24H23.7496L14.2413 10.1624H14.2418ZM11.4042 13.4608L10.4752 12.1321L3.08391 1.55961H6.26607L12.2309 10.0919L13.1599 11.4206L20.9135 22.5113H17.7313L11.4042 13.4613V13.4608Z"/></svg>
+											</a>
+										</li>
+										<li>
+											<a href="">
+												<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none"><path d="M12.2362 24C12.1567 24 12.0773 24 11.9973 23.9996C10.116 24.0042 8.37781 23.9564 6.68738 23.8535C5.13757 23.7592 3.7229 23.2236 2.59607 22.3048C1.50879 21.4182 0.766296 20.2194 0.389282 18.7421C0.0611572 17.456 0.0437622 16.1935 0.0270996 14.9723C0.0150146 14.0962 0.00256348 13.058 0 12.0022C0.00256348 10.942 0.0150146 9.9038 0.0270996 9.02764C0.0437622 7.80669 0.0611572 6.54418 0.389282 5.25787C0.766296 3.78057 1.50879 2.58178 2.59607 1.69518C3.7229 0.776361 5.13757 0.240777 6.68756 0.146478C8.37799 0.0437559 10.1166 -0.00421772 12.0018 0.000359916C13.8836 -0.0036684 15.6213 0.0437559 17.3117 0.146478C18.8615 0.240777 20.2762 0.776361 21.403 1.69518C22.4905 2.58178 23.2328 3.78057 23.6098 5.25787C23.9379 6.544 23.9553 7.80669 23.972 9.02764C23.9841 9.9038 23.9967 10.942 23.9991 11.9978V12.0022C23.9967 13.058 23.9841 14.0962 23.972 14.9723C23.9553 16.1933 23.9381 17.4558 23.6098 18.7421C23.2328 20.2194 22.4905 21.4182 21.403 22.3048C20.2762 23.2236 18.8615 23.7592 17.3117 23.8535C15.6929 23.952 14.0299 24 12.2362 24ZM11.9973 22.5132C13.8479 22.5176 15.5471 22.4707 17.1978 22.3703C18.3697 22.2991 19.752 21.5304 20.5844 20.8517C21.3538 20.2242 21.8837 19.3584 22.1593 18.2785C22.4325 17.2079 22.4482 16.0583 22.4634 14.9467C22.4753 14.0764 22.4878 13.0455 22.4903 12C22.4878 10.9543 22.4753 9.92358 22.4634 9.05328C22.4482 7.94164 22.4325 6.79211 22.1593 5.72131C21.8837 4.64135 21.3538 3.77563 20.5844 3.14813C19.752 2.46954 18.3697 1.72338 17.1978 1.65215C15.5471 1.55162 13.8479 1.5053 12.0016 1.50933C10.1514 1.50493 8.45196 1.55712 6.80127 1.65765C5.62939 1.72888 4.37526 2.23146 3.54286 2.91005C2.77346 3.53755 2.10105 4.64135 1.82548 5.72131C1.55229 6.79211 1.53654 7.94146 1.52134 9.05328C1.50944 9.92431 1.49699 10.9557 1.49443 12.0022C1.49699 13.0441 1.50944 14.0757 1.52134 14.9467C1.53654 16.0583 1.55229 17.2079 1.82548 18.2785C2.10105 19.3584 2.63096 20.2242 3.40037 20.8517C4.23277 21.5303 5.62939 22.2991 6.80127 22.3703C8.45196 22.4709 10.1517 22.5177 11.9973 22.5132ZM11.9526 17.8594C8.72186 17.8594 6.0932 15.2309 6.0932 12C6.0932 8.7691 8.72186 6.14062 11.9526 6.14062C15.1835 6.14062 17.8119 8.7691 17.8119 12C17.8119 15.2309 15.1835 17.8594 11.9526 17.8594ZM12.0016 7.50495C9.36718 7.50495 7.51314 9.35899 7.51314 11.9978C7.51314 14.1947 9.17436 16.5131 11.9757 16.5131C14.1728 16.5131 16.457 14.4316 16.457 11.9978C16.457 9.8009 14.781 7.50495 12.0016 7.50495ZM18.4682 4.26562C17.6916 4.26562 17.0619 4.89513 17.0619 5.67187C17.0619 6.4486 17.6916 7.07812 18.4682 7.07812C19.2449 7.07812 19.8744 6.4486 19.8744 5.67187C19.8744 4.89513 19.2449 4.26562 18.4682 4.26562Z"/></svg>
+											</a>
+										</li>
+										<li>
+											<a href="">
+												<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none"><path d="M5.64368 7.53113H1.125C0.736633 7.53113 0.421875 7.84607 0.421875 8.23425V23.2969C0.421875 23.6852 0.736633 24 1.125 24H5.64368C6.03204 24 6.3468 23.6852 6.3468 23.2969V8.23425C6.3468 7.84607 6.03204 7.53113 5.64368 7.53113ZM4.94055 22.5938H1.82812V8.93738H4.94055V22.5938Z"/><path d="M3.38452 0C1.75085 0 0.421875 1.32898 0.421875 2.96228C0.421875 4.59595 1.75085 5.92474 3.38452 5.92474C5.01801 5.92474 6.3468 4.59576 6.3468 2.96228C6.3468 1.32898 5.01801 0 3.38452 0ZM3.38452 4.51849C2.52631 4.51849 1.82812 3.8205 1.82812 2.96228C1.82812 2.10425 2.52631 1.40625 3.38452 1.40625C4.24255 1.40625 4.94055 2.10425 4.94055 2.96228C4.94055 3.8205 4.24255 4.51849 3.38452 4.51849Z"/><path d="M16.9411 7.4317C15.8723 7.4317 14.8189 7.68933 13.8755 8.17126C13.8435 7.81256 13.5423 7.53113 13.1752 7.53113H8.65613C8.26794 7.53113 7.953 7.84607 7.953 8.23425V23.2969C7.953 23.6852 8.26794 24 8.65613 24H13.1752C13.5635 24 13.8783 23.6852 13.8783 23.2969V15.0125C13.8783 13.9468 14.7455 13.0798 15.8112 13.0798C16.8768 13.0798 17.7437 13.9468 17.7437 15.0125V23.2969C17.7437 23.6852 18.0586 24 18.4468 24H22.9656C23.354 24 23.6688 23.6852 23.6688 23.2969V14.1594C23.6688 10.4496 20.6508 7.4317 16.9411 7.4317ZM22.2625 22.5938H19.1501V15.0125C19.1501 13.1713 17.6523 11.6735 15.8113 11.6735C13.97 11.6735 12.472 13.1713 12.472 15.0125V22.5938H9.35944V8.93738H12.472V9.45685C12.472 9.72729 12.6271 9.97375 12.871 10.0908C13.1147 10.2078 13.4041 10.1744 13.6152 10.0054C14.5673 9.2417 15.7176 8.83795 16.9411 8.83795C19.8754 8.83795 22.2625 11.2251 22.2625 14.1594V22.5938Z"/></svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-6 col-lg-6 wow fadeInUp" alt="" data-wow-delay="300ms">
+							<div class="row align-items-center row-gap-sm-4 row-gap-1 text-sm-start text-center">
+								<div class="col-lg-6 col-md-6 col-sm-6">
+									<div class="img-box">
+										<img src="{{asset('assets/media/about/about-image-1.png')}}" alt="" class="w-100">
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6">
+									<p class="bold-text color-primary mb-8">
+										Le marié
+									</p>
+									<h4 class="mb-16">Ange-Michel SIÉ</h4>
+									<p class="mb-32">Homme de convictions et d’esprit, Ange-Michel est un pilier de sagesse et de joie de vivre. Son humour contagieux et sa générosité naturelle en font un compagnon de route précieux. Entre passion pour la musique, amour de la bonne cuisine et goût du voyage, il ne cesse de célébrer les plaisirs simples de l’existence. Il est de ceux qui rendent les journées lumineuses.</p>
+									<ul class="unstyled social-icons justify-content-sm-start justify-content-center">
+										<li>
+											<a href="">
+												<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none"><path d="M17.625 5.625C18.0131 5.625 18.3281 5.31 18.3281 4.92188V0.703125C18.3281 0.315 18.0131 0 17.625 0H13.4062C10.6922 0 8.48437 2.20781 8.48437 4.92188V8.4375H6.375C5.98687 8.4375 5.67188 8.7525 5.67188 9.14062V13.3594C5.67188 13.7475 5.98687 14.0625 6.375 14.0625H8.48437V23.2969C8.48437 23.685 8.79937 24 9.1875 24H13.4062C13.7944 24 14.1094 23.685 14.1094 23.2969V14.0625H16.9219C17.2655 14.0625 17.5589 13.8141 17.6156 13.4752L18.3188 9.25641C18.3525 9.0525 18.2953 8.84391 18.1617 8.68594C18.0281 8.52844 17.8317 8.4375 17.625 8.4375H14.1094V5.625H17.625ZM13.4062 9.84375H16.7948L16.3261 12.6562H13.4062C13.0181 12.6562 12.7031 12.9713 12.7031 13.3594V22.5938H9.89062V13.3594C9.89062 12.9713 9.57562 12.6562 9.1875 12.6562H7.07812V9.84375H9.1875C9.57562 9.84375 9.89062 9.52875 9.89062 9.14062V4.92188C9.89062 2.98359 11.468 1.40625 13.4062 1.40625H16.9219V4.21875H13.4062C13.0181 4.21875 12.7031 4.53375 12.7031 4.92188V9.14062C12.7031 9.52875 13.0181 9.84375 13.4062 9.84375Z"/></svg>
+											</a>
+										</li>
+										<li>
+											<a href="">
+												<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none"><path d="M14.2418 10.1624L22.9842 0H20.9125L13.3215 8.82384L7.25852 0H0.265625L9.43399 13.3432L0.265625 24H2.33742L10.3538 14.6817L16.7567 24H23.7496L14.2413 10.1624H14.2418ZM11.4042 13.4608L10.4752 12.1321L3.08391 1.55961H6.26607L12.2309 10.0919L13.1599 11.4206L20.9135 22.5113H17.7313L11.4042 13.4613V13.4608Z"/></svg>
+											</a>
+										</li>
+										<li>
+											<a href="">
+												<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none"><path d="M12.2362 24C12.1567 24 12.0773 24 11.9973 23.9996C10.116 24.0042 8.37781 23.9564 6.68738 23.8535C5.13757 23.7592 3.7229 23.2236 2.59607 22.3048C1.50879 21.4182 0.766296 20.2194 0.389282 18.7421C0.0611572 17.456 0.0437622 16.1935 0.0270996 14.9723C0.0150146 14.0962 0.00256348 13.058 0 12.0022C0.00256348 10.942 0.0150146 9.9038 0.0270996 9.02764C0.0437622 7.80669 0.0611572 6.54418 0.389282 5.25787C0.766296 3.78057 1.50879 2.58178 2.59607 1.69518C3.7229 0.776361 5.13757 0.240777 6.68756 0.146478C8.37799 0.0437559 10.1166 -0.00421772 12.0018 0.000359916C13.8836 -0.0036684 15.6213 0.0437559 17.3117 0.146478C18.8615 0.240777 20.2762 0.776361 21.403 1.69518C22.4905 2.58178 23.2328 3.78057 23.6098 5.25787C23.9379 6.544 23.9553 7.80669 23.972 9.02764C23.9841 9.9038 23.9967 10.942 23.9991 11.9978V12.0022C23.9967 13.058 23.9841 14.0962 23.972 14.9723C23.9553 16.1933 23.9381 17.4558 23.6098 18.7421C23.2328 20.2194 22.4905 21.4182 21.403 22.3048C20.2762 23.2236 18.8615 23.7592 17.3117 23.8535C15.6929 23.952 14.0299 24 12.2362 24ZM11.9973 22.5132C13.8479 22.5176 15.5471 22.4707 17.1978 22.3703C18.3697 22.2991 19.752 21.5304 20.5844 20.8517C21.3538 20.2242 21.8837 19.3584 22.1593 18.2785C22.4325 17.2079 22.4482 16.0583 22.4634 14.9467C22.4753 14.0764 22.4878 13.0455 22.4903 12C22.4878 10.9543 22.4753 9.92358 22.4634 9.05328C22.4482 7.94164 22.4325 6.79211 22.1593 5.72131C21.8837 4.64135 21.3538 3.77563 20.5844 3.14813C19.752 2.46954 18.3697 1.72338 17.1978 1.65215C15.5471 1.55162 13.8479 1.5053 12.0016 1.50933C10.1514 1.50493 8.45196 1.55712 6.80127 1.65765C5.62939 1.72888 4.37526 2.23146 3.54286 2.91005C2.77346 3.53755 2.10105 4.64135 1.82548 5.72131C1.55229 6.79211 1.53654 7.94146 1.52134 9.05328C1.50944 9.92431 1.49699 10.9557 1.49443 12.0022C1.49699 13.0441 1.50944 14.0757 1.52134 14.9467C1.53654 16.0583 1.55229 17.2079 1.82548 18.2785C2.10105 19.3584 2.63096 20.2242 3.40037 20.8517C4.23277 21.5303 5.62939 22.2991 6.80127 22.3703C8.45196 22.4709 10.1517 22.5177 11.9973 22.5132ZM11.9526 17.8594C8.72186 17.8594 6.0932 15.2309 6.0932 12C6.0932 8.7691 8.72186 6.14062 11.9526 6.14062C15.1835 6.14062 17.8119 8.7691 17.8119 12C17.8119 15.2309 15.1835 17.8594 11.9526 17.8594ZM12.0016 7.50495C9.36718 7.50495 7.51314 9.35899 7.51314 11.9978C7.51314 14.1947 9.17436 16.5131 11.9757 16.5131C14.1728 16.5131 16.457 14.4316 16.457 11.9978C16.457 9.8009 14.781 7.50495 12.0016 7.50495ZM18.4682 4.26562C17.6916 4.26562 17.0619 4.89513 17.0619 5.67187C17.0619 6.4486 17.6916 7.07812 18.4682 7.07812C19.2449 7.07812 19.8744 6.4486 19.8744 5.67187C19.8744 4.89513 19.2449 4.26562 18.4682 4.26562Z"/></svg>
+											</a>
+										</li>
+										<li>
+											<a href="">
+												<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none"><path d="M5.64368 7.53113H1.125C0.736633 7.53113 0.421875 7.84607 0.421875 8.23425V23.2969C0.421875 23.6852 0.736633 24 1.125 24H5.64368C6.03204 24 6.3468 23.6852 6.3468 23.2969V8.23425C6.3468 7.84607 6.03204 7.53113 5.64368 7.53113ZM4.94055 22.5938H1.82812V8.93738H4.94055V22.5938Z"/><path d="M3.38452 0C1.75085 0 0.421875 1.32898 0.421875 2.96228C0.421875 4.59595 1.75085 5.92474 3.38452 5.92474C5.01801 5.92474 6.3468 4.59576 6.3468 2.96228C6.3468 1.32898 5.01801 0 3.38452 0ZM3.38452 4.51849C2.52631 4.51849 1.82812 3.8205 1.82812 2.96228C1.82812 2.10425 2.52631 1.40625 3.38452 1.40625C4.24255 1.40625 4.94055 2.10425 4.94055 2.96228C4.94055 3.8205 4.24255 4.51849 3.38452 4.51849Z"/><path d="M16.9411 7.4317C15.8723 7.4317 14.8189 7.68933 13.8755 8.17126C13.8435 7.81256 13.5423 7.53113 13.1752 7.53113H8.65613C8.26794 7.53113 7.953 7.84607 7.953 8.23425V23.2969C7.953 23.6852 8.26794 24 8.65613 24H13.1752C13.5635 24 13.8783 23.6852 13.8783 23.2969V15.0125C13.8783 13.9468 14.7455 13.0798 15.8112 13.0798C16.8768 13.0798 17.7437 13.9468 17.7437 15.0125V23.2969C17.7437 23.6852 18.0586 24 18.4468 24H22.9656C23.354 24 23.6688 23.6852 23.6688 23.2969V14.1594C23.6688 10.4496 20.6508 7.4317 16.9411 7.4317ZM22.2625 22.5938H19.1501V15.0125C19.1501 13.1713 17.6523 11.6735 15.8113 11.6735C13.97 11.6735 12.472 13.1713 12.472 15.0125V22.5938H9.35944V8.93738H12.472V9.45685C12.472 9.72729 12.6271 9.97375 12.871 10.0908C13.1147 10.2078 13.4041 10.1744 13.6152 10.0054C14.5673 9.2417 15.7176 8.83795 16.9411 8.83795C19.8754 8.83795 22.2625 11.2251 22.2625 14.1594V22.5938Z"/></svg>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- About Section End -->
+
+			<!-- Wedding Banner Area Start -->
+			<section class="wedding-banner py-80">
+				<div class="container-fluid">
+					<div class="sale-banner">
+						<div class="row">
+							<div class="col-lg-6 col-md-12 wow fadeInUp" alt="" data-wow-delay="300ms">
+								<div class="sale-text text-center bg-accent-light">
+									<img src="{{asset('assets/media/banner/flower-text.png')}}" alt="" class="flower-image mb-16">
+									<h2 class="color-primary mb-16">Nous allons nous marier</h2>
+									<h2 class="light-black mb-32">05 . 07 . 2025</h2>
+									<div class="coming-soon mb-32">
+										<div class="text-block">
+											<ul class="countdown unstyled">
+												<li>
+													<h2>365</h2>
+													<h6>Jours</h6>
+												</li>
+												<li>
+													<h2>24</h2>
+													<h6>Hrs</h6>
+												</li>
+												<li>
+													<h2>60</h2>
+													<h6>Min</h6>
+												</li>
+												<li>
+													<h2>60</h2>
+													<h6>Sec</h6>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<h5 class="light-black">Église St Jacques des 2 Plateaux, Abidjan</h5>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-12 wow fadeInUp" alt="" data-wow-delay="500ms">
+								<img src="{{asset('assets/media/bg/sale-banner.png')}}" alt="" class="wedding-image">
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Wedding Banner Area End -->
+
+			<!-- Story Area Start  -->
+			<section class="py-80" id="story">
+				<div class="container-fluid">
+					<div class="heading mb-48">
+						<ul class="mb-16">
+							<li class="bold-text color-primary text-uppercase">
+								Le programme
+							</li>
+						</ul>
+						<h2>Le déroulé
+							<span>des évènements</span>
+						</h2>
+					</div>
+					<div class="story">
+						<div class="content">
+							<div class="block">
+								<img src="{{asset('assets/media/icons/heart.png')}}" alt="" class="heart-icon">
+								<div class="row">
+									<div class="col-md-6 wow fadeInLeft" alt="" data-wow-delay="300ms">
+										<div class="story-image text-center">
+											<img src="{{asset('assets/media/images/story-1.png')}}" alt="">
+										</div>
+									</div>
+									<div class="col-md-6 wow fadeInRight" alt="" data-wow-delay="500ms">
+										<div class="text-block">
+											<h6 class="color-primary mb-8">Dès 15H00</h6>
+											<h4 class="mb-24">La cérémonie réligieuse</h4>
+											<p>Entourés de vos pensées bienveillantes, nous nous unirons devant Dieu dans la joie et la gratitude. Ce moment sacré sera l’occasion de sceller notre engagement dans la foi, portés par les chants, les prières et la lumière de l’amour. Un instant empreint d’émotion, de grâce et de promesses éternelles.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="block st-2">
+								<img src="{{asset('assets/media/icons/heart.png')}}" alt="" class="heart-icon">
+								<div class="row">
+									<div class="col-md-6 order-md-2 wow fadeInRight" alt="" data-wow-delay="300ms">
+										<div class="story-image text-center">
+											<img src="{{asset('assets/media/images/story-2.png')}}" alt="">
+										</div>
+									</div>
+									<div class="col-md-6 order-md-1 wow fadeInLeft" alt="" data-wow-delay="500ms">
+										<div class="text-block v-2">
+											<h6 class="color-primary mb-8">À partir de 18H00</h6>
+											<h4 class="mb-24">Le vin d'honneur</h4>
+											<p>Sous les rayons dorés du soir, nous partagerons un moment de convivialité et de douce effervescence. Bulles de champagne, éclats de rire et petits mets raffinés viendront célébrer nos premiers instants en tant qu’époux, entourés de vos sourires et de votre tendresse.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="block pb-0">
+								<img src="{{asset('assets/media/icons/heart.png')}}" alt="" class="heart-icon">
+								<div class="row">
+									<div class="col-md-6 wow fadeInLeft" alt="" data-wow-delay="300ms">
+										<div class="story-image text-center">
+											<img src="{{asset('assets/media/images/story-3.png')}}" alt="">
+										</div>
+									</div>
+									<div class="col-md-6 wow fadeInRight" alt="" data-wow-delay="500ms">
+										<div class="text-block">
+											<h6 class="color-primary mb-8">Puis à 20H00</h6>
+											<h4 class="mb-24">Le Dîner</h4>
+											<p>La soirée se poursuivra autour d’une table élégante, où les saveurs se mêleront aux souvenirs et aux discours chargés d’émotion. Un repas préparé avec soin pour honorer votre présence, dans une atmosphère chaleureuse et festive avant que la piste ne s’illumine…</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Story Area End  -->
+
+			<!-- Gallery Start -->
+			<section class="gallery py-80" id="gallery">
+				<div class="container-fluid">
+					<div class="d-flex align-items-center justify-content-between mb-48">
+						<div class="heading ">
+							<ul class="mb-16">
+								<li class="bold-text color-primary text-uppercase">
+									Galerie
+								</li>
+							</ul>
+							<h2>Notre belle
+								<span>Galerie</span>
+							</h2>
+						</div>
+						<a href="" class="cus-btn">
+							Voir tout
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
+								<g clip-path="url(#clip0_9589_953)">
+									<path d="M2.72936 16.4958C2.27959 16.046 1.88017 15.5685 1.52537 15.0762C0.909202 15.4623 0.452405 15.824 0.229889 16.0099C0.140545 16.0845 0.119405 16.2129 0.180061 16.3122C0.642483 17.0698 2.6544 20.0927 5.58245 20.5754C6.8769 20.7888 8.16086 20.4744 9.24972 20.0082C7.30656 19.5107 4.74123 18.5078 2.72936 16.4958Z" fill="#43273A"/>
+									<path d="M22.7655 15.0762C22.4107 15.5686 22.0112 16.0461 21.5615 16.4958C19.5495 18.5078 16.9843 19.5107 15.0411 20.0082C16.13 20.4744 17.4139 20.7888 18.7084 20.5754C21.6364 20.0927 23.6483 17.0698 24.1108 16.3122C24.1714 16.2129 24.1503 16.0846 24.0609 16.0099C23.8385 15.824 23.3817 15.4622 22.7655 15.0762Z" fill="#43273A"/>
+									<path d="M7.25844 10.7183C7.25844 10.2504 7.2891 9.79143 7.34427 9.34312C4.60846 7.43264 1.36358 7.00696 0.40527 6.92025C0.256957 6.90684 0.133066 7.03073 0.146473 7.17904C0.24852 8.3062 0.818848 12.5969 3.7236 15.5017C5.65527 17.4333 8.19955 18.3325 10.0191 18.7482C8.87502 17.0885 7.25844 14.1374 7.25844 10.7183Z" fill="#43273A"/>
+									<path d="M23.8857 6.92025C22.9274 7.00696 19.6825 7.43264 16.9467 9.34317C17.0019 9.79143 17.0325 10.2504 17.0325 10.7183C17.0325 14.1375 15.4159 17.0885 14.2718 18.7482C16.0914 18.3324 18.6357 17.4333 20.5674 15.5016C23.4721 12.5969 24.0425 8.30615 24.1445 7.179C24.1579 7.03073 24.034 6.90684 23.8857 6.92025Z" fill="#43273A"/>
+									<path d="M15.6263 10.718C15.6263 14.7589 13.0386 18.1401 12.3255 18.9951C12.2317 19.1076 12.0593 19.1076 11.9655 18.9951C11.2524 18.1401 8.66466 14.7589 8.66466 10.718C8.66466 6.67708 11.2524 3.29594 11.9655 2.44094C12.0593 2.32844 12.2317 2.32844 12.3255 2.44094C13.0386 3.29594 15.6263 6.67713 15.6263 10.718Z" fill="#43273A"/>
+								</g>
+								<defs>
+									<clipPath id="clip0_9589_753">
+										<rect width="24" height="24" fill="white" transform="translate(0.145508 -0.5)"/>
+									</clipPath>
+								</defs>
+							</svg>
+							<span></span>
+						</a>
+					</div>
+					<div class="row row-gap-4">
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6 wow zoomIn" alt="" data-wow-delay="300ms">
+							<img src="{{asset('assets/media/gallery/gm-1.png')}}" alt="" class="w-100 br-10">
+						</div>
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6 wow zoomIn" alt="" data-wow-delay="500ms">
+							<img src="{{asset('assets/media/gallery/gm-2.png')}}" alt="" class="mb-24 w-100 br-10">
+							<img src="{{asset('assets/media/gallery/gm-3.png')}}" alt="" class="w-100 br-10">
+						</div>
+						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 d-sm-block d-none wow zoomIn" alt="" data-wow-delay="700ms">
+							<img src="{{asset('assets/media/gallery/gm-4.png')}}" alt="" class="w-100 br-10">
+						</div>
+						<div class="col-xl-3 col-lg-3 col-md-4 d-lg-block d-none wow zoomIn" alt="" data-wow-delay="900ms">
+							<img src="{{asset('assets/media/gallery/gm-5.png')}}" alt="" class="mb-24 w-100 br-10">
+							<img src="{{asset('assets/media/gallery/gm-6.png')}}" alt="" class="w-100 br-10">
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Gallery End -->
+
+			<!-- Inquiry Section Start -->
+			<section class="inquiry py-80" id="inquiry">
+				<div class="container-fluid">
+					<div class="inquiry-bg">
+						<div class="row row-gap-3 align-items-center">
+							<div class="col-xl-6 col-lg-6 col-md-4"></div>
+							<div class="col-xl-6 col-lg-6 col-md-8 wow fadeInUp" alt="" data-wow-delay="300ms">
+								<div class="inquiry-form">
+									<div class="app-heading mb-32">
+										<h4 class="light-black mb-8">Serez-vous présent ?</h4>
+										<p>Veuillez réserver avant le
+											<span class="color-primary">
+												28 juin, 2025</span>
+										</p>
+									</div>
+									<form action="{{path('app_front')}}" class="form-group form-validation">
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="mb-24">
+													<input type="text" class="cus-form-control" name="name" id="fullName" placeholder="Nom & prénoms" required>
+												</div>
+											</div>
+
+											<div class="col-sm-6">
+												<div class="mb-24">
+													<input type="text" class="cus-form-control" name="email" id="eMail" placeholder="Votre Email" required>
+												</div>
+											</div>
+
+											<div class="col-sm-12">
+												<div class="mb-24">
+													<select name="select" class="has-nice-select cus-form-control" id="selectGuest" required>
+														<option value="">Nombre d'invités</option>
+														<option value="50">1 - 3</option>
+														<option value="100">1 - 5
+														</option>
+														<option value="150">1 - 6
+														</option>
+													</select>
+												</div>
+											</div>
+											{# <div class="col-sm-6">
+												<div class="mt-sm-0 mt-24">
+													<select name="select" class="has-nice-select cus-form-control" id="selectMeal" required>
+														<option value="">Meal Preferences</option>
+														<option value="Chinese">Chinese Food</option>
+														<option value="Italian">Italian Food</option>
+														<option value="Mexican">Mexican Food</option>
+														<option value="Asian">Asian Food</option>
+														<option value="Fisher">Others</option>
+													</select>
+												</div>
+											</div> #}
+											<div class="col-sm-12">
+												<div class="radio-container mt-32 mb-32">
+													<div class="radio-wrapper">
+														<label class="radio-button">
+															<input id="option1" name="radio-group" type="radio" checked>
+															<span class="radio-checkmark"></span>
+															<span class="radio-label">Oui, je serai là</span>
+														</label>
+													</div>
+													<div class="radio-wrapper">
+														<label class="radio-button">
+															<input id="option2" name="radio-group" type="radio">
+															<span class="radio-checkmark"></span>
+															<span class="radio-label">Désolé, je ne peux pas venir</span>
+														</label>
+													</div>
+												</div>
+
+											</div>
+											<div class="col-sm-12">
+												<button type="submit" class="cus-btn">
+													Envoyer une demande
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
+														<g clip-path="url(#clip0_9589_953)">
+															<path d="M2.72936 16.4958C2.27959 16.046 1.88017 15.5685 1.52537 15.0762C0.909202 15.4623 0.452405 15.824 0.229889 16.0099C0.140545 16.0845 0.119405 16.2129 0.180061 16.3122C0.642483 17.0698 2.6544 20.0927 5.58245 20.5754C6.8769 20.7888 8.16086 20.4744 9.24972 20.0082C7.30656 19.5107 4.74123 18.5078 2.72936 16.4958Z" fill="#43273A"/>
+															<path d="M22.7655 15.0762C22.4107 15.5686 22.0112 16.0461 21.5615 16.4958C19.5495 18.5078 16.9843 19.5107 15.0411 20.0082C16.13 20.4744 17.4139 20.7888 18.7084 20.5754C21.6364 20.0927 23.6483 17.0698 24.1108 16.3122C24.1714 16.2129 24.1503 16.0846 24.0609 16.0099C23.8385 15.824 23.3817 15.4622 22.7655 15.0762Z" fill="#43273A"/>
+															<path d="M7.25844 10.7183C7.25844 10.2504 7.2891 9.79143 7.34427 9.34312C4.60846 7.43264 1.36358 7.00696 0.40527 6.92025C0.256957 6.90684 0.133066 7.03073 0.146473 7.17904C0.24852 8.3062 0.818848 12.5969 3.7236 15.5017C5.65527 17.4333 8.19955 18.3325 10.0191 18.7482C8.87502 17.0885 7.25844 14.1374 7.25844 10.7183Z" fill="#43273A"/>
+															<path d="M23.8857 6.92025C22.9274 7.00696 19.6825 7.43264 16.9467 9.34317C17.0019 9.79143 17.0325 10.2504 17.0325 10.7183C17.0325 14.1375 15.4159 17.0885 14.2718 18.7482C16.0914 18.3324 18.6357 17.4333 20.5674 15.5016C23.4721 12.5969 24.0425 8.30615 24.1445 7.179C24.1579 7.03073 24.034 6.90684 23.8857 6.92025Z" fill="#43273A"/>
+															<path d="M15.6263 10.718C15.6263 14.7589 13.0386 18.1401 12.3255 18.9951C12.2317 19.1076 12.0593 19.1076 11.9655 18.9951C11.2524 18.1401 8.66466 14.7589 8.66466 10.718C8.66466 6.67708 11.2524 3.29594 11.9655 2.44094C12.0593 2.32844 12.2317 2.32844 12.3255 2.44094C13.0386 3.29594 15.6263 6.67713 15.6263 10.718Z" fill="#43273A"/>
+														</g>
+														<defs>
+															<clipPath id="clip0_9589_864">
+																<rect width="24" height="24" fill="white" transform="translate(0.145508 -0.5)"/>
+															</clipPath>
+														</defs>
+													</svg>
+													<span></span>
+												</button>
+											</div>
+
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Inquiry Section End -->
+
+			<!-- Ceremony Banner Start -->
+			<section class="ceremony-banner py-80">
+				<div class="container-fluid">
+					<div class="banner-wrapper">
+						<div class="content-block wow fadeInUp" alt="" data-wow-delay="300ms">
+							<h2 class="light-black mb-32">La Cérémonie</h2>
+							<div class="mb-24">
+								<h5 class="mb-12">Samedi 05 Juil, 2025</h5>
+								<h6>15:00 - 20:00</h6>
+							</div>
+							<h4 class="mb-12 color-primary">+225 07 09 983 493</h4>
+							<p class="bold-text accent-dark mb-32">St Jacques des 2 Plateaux, Abidjan</p>
+							<a href="https://www.google.com/maps" class="color-primary">Voir la localisation</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Ceremony Banner End -->
+
+			<!-- Blogs Area Start -->
+			<section class="py-80 wow fadeInUp" alt="" data-wow-delay="400ms" id="temoignages">
+				<div class="container-fluid">
+					<div class="d-flex align-items-center justify-content-between mb-48">
+						<div class="heading">
+							<ul class="mb-16">
+								<li class="bold-text color-primary text-uppercase">
+									Témoignages
+								</li>
+							</ul>
+							<h2>Les messages de  
+								<span>nos invités</span>
+							</h2>
+						</div>
+						<a href="" class="cus-btn">
+							Voir tout
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
+								<g clip-path="url(#clip0_9589_953)">
+									<path d="M2.72936 16.4958C2.27959 16.046 1.88017 15.5685 1.52537 15.0762C0.909202 15.4623 0.452405 15.824 0.229889 16.0099C0.140545 16.0845 0.119405 16.2129 0.180061 16.3122C0.642483 17.0698 2.6544 20.0927 5.58245 20.5754C6.8769 20.7888 8.16086 20.4744 9.24972 20.0082C7.30656 19.5107 4.74123 18.5078 2.72936 16.4958Z" fill="#43273A"/>
+									<path d="M22.7655 15.0762C22.4107 15.5686 22.0112 16.0461 21.5615 16.4958C19.5495 18.5078 16.9843 19.5107 15.0411 20.0082C16.13 20.4744 17.4139 20.7888 18.7084 20.5754C21.6364 20.0927 23.6483 17.0698 24.1108 16.3122C24.1714 16.2129 24.1503 16.0846 24.0609 16.0099C23.8385 15.824 23.3817 15.4622 22.7655 15.0762Z" fill="#43273A"/>
+									<path d="M7.25844 10.7183C7.25844 10.2504 7.2891 9.79143 7.34427 9.34312C4.60846 7.43264 1.36358 7.00696 0.40527 6.92025C0.256957 6.90684 0.133066 7.03073 0.146473 7.17904C0.24852 8.3062 0.818848 12.5969 3.7236 15.5017C5.65527 17.4333 8.19955 18.3325 10.0191 18.7482C8.87502 17.0885 7.25844 14.1374 7.25844 10.7183Z" fill="#43273A"/>
+									<path d="M23.8857 6.92025C22.9274 7.00696 19.6825 7.43264 16.9467 9.34317C17.0019 9.79143 17.0325 10.2504 17.0325 10.7183C17.0325 14.1375 15.4159 17.0885 14.2718 18.7482C16.0914 18.3324 18.6357 17.4333 20.5674 15.5016C23.4721 12.5969 24.0425 8.30615 24.1445 7.179C24.1579 7.03073 24.034 6.90684 23.8857 6.92025Z" fill="#43273A"/>
+									<path d="M15.6263 10.718C15.6263 14.7589 13.0386 18.1401 12.3255 18.9951C12.2317 19.1076 12.0593 19.1076 11.9655 18.9951C11.2524 18.1401 8.66466 14.7589 8.66466 10.718C8.66466 6.67708 11.2524 3.29594 11.9655 2.44094C12.0593 2.32844 12.2317 2.32844 12.3255 2.44094C13.0386 3.29594 15.6263 6.67713 15.6263 10.718Z" fill="#43273A"/>
+								</g>
+								<defs>
+									<clipPath id="clip0_9589_953">
+										<rect width="24" height="24" fill="white" transform="translate(0.145508 -0.5)"/>
+									</clipPath>
+								</defs>
+							</svg>
+							<span></span>
+						</a>
+					</div>
+					<div class="blogs-slider-block">
+						<button class="arrow prev-btn" data-slide="blogs-slider">
+							<svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" viewbox="0 0 33 32" fill="none">
+								<path d="M12.8057 23C12.8057 20 10.0057 16 6.80566 16M6.80566 16C8.639 16 12.8057 15 12.8057 9M6.80566 16H25.8057" stroke="#1B1918" stroke-width="2"/>
+							</svg>
+						</button>
+						<button class="arrow next-btn" data-slide="blogs-slider">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32" fill="none">
+								<path d="M19.3545 23C19.3545 20 22.1545 16 25.3545 16M25.3545 16C23.5212 16 19.3545 15 19.3545 9M25.3545 16H6.35449" stroke="#1B1918" stroke-width="2"/>
+							</svg>
+						</button>
+						<div class="row blogs-slider">
+							<div class="col-lg-4">
+								<div class="blog-card">
+									{# <figure>
+										<img src="{{asset('assets/media/blogs/b-1.png')}}" alt="">
+									</figure> #}
+									<div class="text-block">
+										<div class="top-row mb-24">
+											<div class="author">
+												<img src="{{asset('assets/media/users/icon-user.jpg')}}" alt="">
+												<span class="bold-text color-primary">Sophie Kouadio</span>
+											</div>
+											{# <span class="date">14 April, 2025</span> #}
+										</div>
+										<a href="" class="title h4 mb-16">Amie d’enfance de la mariée</a>
+										<p class="mb-24">“Depuis les bancs de l’école jusqu’à ce grand jour, j’ai vu ton cœur grandir, s’ouvrir et s’épanouir. Tu as trouvé un amour à ta mesure : profond, vrai, lumineux. Je vous souhaite une vie pleine de complicité et de douce folie.”</p>
+										{# <a href="" class="cus-btn">
+											Read More
+											<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none">
+												<path d="M23.1946 4.93105L21.5122 4.93097V3.18948C21.5122 2.79078 21.2205 2.45203 20.8262 2.39304C20.7573 2.3827 19.1184 2.14464 17.1448 2.50375C14.9447 2.90407 13.19 3.8913 12 5.38374C10.8098 3.8913 9.05516 2.90407 6.85509 2.50375C4.88144 2.14472 3.24249 2.3827 3.17373 2.39304C2.77938 2.45211 2.48767 2.79086 2.48767 3.18948V4.93097H0.805331C0.360645 4.93097 0 5.29162 0 5.73639V20.9125C0 21.1733 0.126222 21.4179 0.338827 21.569C0.551432 21.7201 0.823997 21.7589 1.07022 21.6731C1.13066 21.6521 7.16563 19.5925 11.6657 21.6452C11.8781 21.7421 12.1219 21.7421 12.3343 21.6452C16.8218 19.5983 22.8697 21.6523 22.9298 21.6731C23.0161 21.7031 23.1055 21.7179 23.1945 21.7179C23.3596 21.7179 23.523 21.6672 23.6612 21.5691C23.8738 21.4179 24 21.1733 24 20.9126V5.73647C23.9999 5.2917 23.6394 4.93105 23.1946 4.93105ZM1.61074 19.8349V6.54172H2.48767V17.267C2.48767 17.501 2.59005 17.7233 2.7671 17.8762C2.94415 18.0292 3.17963 18.0978 3.41106 18.0636C3.4555 18.0572 6.95416 17.5768 9.51027 19.3306C6.36159 18.7922 3.21025 19.415 1.61074 19.8349ZM11.1946 18.6043C10.0688 17.5871 8.60239 16.8993 6.85509 16.5814C6.0142 16.4283 5.23408 16.3837 4.61025 16.3837C4.42504 16.3837 4.25356 16.3877 4.09849 16.3939V3.92904H4.09841C5.64628 3.85922 9.41168 4.02471 11.1946 7.04717V18.6043ZM12.8053 7.04725C14.5818 4.03772 18.3531 3.86471 19.9015 3.93106V16.3939C19.2241 16.3666 18.2353 16.3829 17.1448 16.5814C15.3975 16.8993 13.9311 17.587 12.8053 18.6043V7.04725ZM14.487 19.3311C17.0434 17.5763 20.5439 18.0571 20.5876 18.0635C20.8196 18.0984 21.0549 18.0302 21.2325 17.8773C21.4101 17.7242 21.5122 17.5015 21.5122 17.267V6.5418H22.3892V19.8349C20.7892 19.4148 17.6365 18.7918 14.487 19.3311Z"/>
+											</svg>
+											<span></span>
+										</a> #}
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="blog-card">
+									{# <figure>
+										<img src="{{asset('assets/media/blogs/b-2.png')}}" alt="">
+									</figure> #}
+									<div class="text-block">
+										<div class="top-row mb-24">
+											<div class="author">
+												<img src="{{asset('assets/media/users/icon-user.jpg')}}" alt="">
+												<span class="bold-text color-primary">Marc Djédjé</span>
+											</div>
+											{# <span class="date">14 April, 2024</span> #}
+										</div>
+										<a href="" class="title h4 mb-16">Collègue et ami du marié</a>
+										<p class="mb-24">“Tu as toujours été un homme de parole, d’engagement et de loyauté. Voir ton regard aujourd’hui en dit long : tu as trouvé ta paix, ton foyer, ton avenir. Bravo frère ! Que Dieu veille sur votre bonheur.”</p>
+										{# <a href="" class="cus-btn">
+											Read More
+											<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none">
+												<path d="M23.1946 4.93105L21.5122 4.93097V3.18948C21.5122 2.79078 21.2205 2.45203 20.8262 2.39304C20.7573 2.3827 19.1184 2.14464 17.1448 2.50375C14.9447 2.90407 13.19 3.8913 12 5.38374C10.8098 3.8913 9.05516 2.90407 6.85509 2.50375C4.88144 2.14472 3.24249 2.3827 3.17373 2.39304C2.77938 2.45211 2.48767 2.79086 2.48767 3.18948V4.93097H0.805331C0.360645 4.93097 0 5.29162 0 5.73639V20.9125C0 21.1733 0.126222 21.4179 0.338827 21.569C0.551432 21.7201 0.823997 21.7589 1.07022 21.6731C1.13066 21.6521 7.16563 19.5925 11.6657 21.6452C11.8781 21.7421 12.1219 21.7421 12.3343 21.6452C16.8218 19.5983 22.8697 21.6523 22.9298 21.6731C23.0161 21.7031 23.1055 21.7179 23.1945 21.7179C23.3596 21.7179 23.523 21.6672 23.6612 21.5691C23.8738 21.4179 24 21.1733 24 20.9126V5.73647C23.9999 5.2917 23.6394 4.93105 23.1946 4.93105ZM1.61074 19.8349V6.54172H2.48767V17.267C2.48767 17.501 2.59005 17.7233 2.7671 17.8762C2.94415 18.0292 3.17963 18.0978 3.41106 18.0636C3.4555 18.0572 6.95416 17.5768 9.51027 19.3306C6.36159 18.7922 3.21025 19.415 1.61074 19.8349ZM11.1946 18.6043C10.0688 17.5871 8.60239 16.8993 6.85509 16.5814C6.0142 16.4283 5.23408 16.3837 4.61025 16.3837C4.42504 16.3837 4.25356 16.3877 4.09849 16.3939V3.92904H4.09841C5.64628 3.85922 9.41168 4.02471 11.1946 7.04717V18.6043ZM12.8053 7.04725C14.5818 4.03772 18.3531 3.86471 19.9015 3.93106V16.3939C19.2241 16.3666 18.2353 16.3829 17.1448 16.5814C15.3975 16.8993 13.9311 17.587 12.8053 18.6043V7.04725ZM14.487 19.3311C17.0434 17.5763 20.5439 18.0571 20.5876 18.0635C20.8196 18.0984 21.0549 18.0302 21.2325 17.8773C21.4101 17.7242 21.5122 17.5015 21.5122 17.267V6.5418H22.3892V19.8349C20.7892 19.4148 17.6365 18.7918 14.487 19.3311Z"/>
+											</svg>
+											<span></span>
+										</a> #}
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="blog-card">
+									{# <figure>
+										<img src="{{asset('assets/media/blogs/b-3.png')}}" alt="">
+									</figure> #}
+									<div class="text-block">
+										<div class="top-row mb-24">
+											<div class="author">
+												<img src="{{asset('assets/media/users/icon-user.jpg')}}" alt="">
+												<span class="bold-text color-primary">Mélanie & Jules Akissi</span>
+											</div>
+											{# <span class="date">14 April, 2024</span> #}
+										</div>
+										<a href="" class="title h4 mb-16">Amis du couple</a>
+										<p class="mb-24">“L’amour, c’est savoir danser sous la pluie, rire aux éclats à minuit, et se tenir la main quand tout vacille. Vous incarnez tout cela, et plus encore. Merci de nous inspirer. On vous aime fort !”</p>
+										{# <a href="" class="cus-btn">
+											Read More
+											<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none">
+												<path d="M23.1946 4.93105L21.5122 4.93097V3.18948C21.5122 2.79078 21.2205 2.45203 20.8262 2.39304C20.7573 2.3827 19.1184 2.14464 17.1448 2.50375C14.9447 2.90407 13.19 3.8913 12 5.38374C10.8098 3.8913 9.05516 2.90407 6.85509 2.50375C4.88144 2.14472 3.24249 2.3827 3.17373 2.39304C2.77938 2.45211 2.48767 2.79086 2.48767 3.18948V4.93097H0.805331C0.360645 4.93097 0 5.29162 0 5.73639V20.9125C0 21.1733 0.126222 21.4179 0.338827 21.569C0.551432 21.7201 0.823997 21.7589 1.07022 21.6731C1.13066 21.6521 7.16563 19.5925 11.6657 21.6452C11.8781 21.7421 12.1219 21.7421 12.3343 21.6452C16.8218 19.5983 22.8697 21.6523 22.9298 21.6731C23.0161 21.7031 23.1055 21.7179 23.1945 21.7179C23.3596 21.7179 23.523 21.6672 23.6612 21.5691C23.8738 21.4179 24 21.1733 24 20.9126V5.73647C23.9999 5.2917 23.6394 4.93105 23.1946 4.93105ZM1.61074 19.8349V6.54172H2.48767V17.267C2.48767 17.501 2.59005 17.7233 2.7671 17.8762C2.94415 18.0292 3.17963 18.0978 3.41106 18.0636C3.4555 18.0572 6.95416 17.5768 9.51027 19.3306C6.36159 18.7922 3.21025 19.415 1.61074 19.8349ZM11.1946 18.6043C10.0688 17.5871 8.60239 16.8993 6.85509 16.5814C6.0142 16.4283 5.23408 16.3837 4.61025 16.3837C4.42504 16.3837 4.25356 16.3877 4.09849 16.3939V3.92904H4.09841C5.64628 3.85922 9.41168 4.02471 11.1946 7.04717V18.6043ZM12.8053 7.04725C14.5818 4.03772 18.3531 3.86471 19.9015 3.93106V16.3939C19.2241 16.3666 18.2353 16.3829 17.1448 16.5814C15.3975 16.8993 13.9311 17.587 12.8053 18.6043V7.04725ZM14.487 19.3311C17.0434 17.5763 20.5439 18.0571 20.5876 18.0635C20.8196 18.0984 21.0549 18.0302 21.2325 17.8773C21.4101 17.7242 21.5122 17.5015 21.5122 17.267V6.5418H22.3892V19.8349C20.7892 19.4148 17.6365 18.7918 14.487 19.3311Z"/>
+											</svg>
+											<span></span>
+										</a> #}
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="blog-card">
+									{# <figure>
+										<img src="{{asset('assets/media/blogs/b-1.png')}}" alt="">
+									</figure> #}
+									<div class="text-block">
+										<div class="top-row mb-24">
+											<div class="author">
+												<img src="{{asset('assets/media/users/icon-user.jpg')}}" alt="">
+												<span class="bold-text color-primary">Pasteur Benjamin Yao</span>
+											</div>
+											{# <span class="date">14 April, 2024</span> #}
+										</div>
+										<a href="" class="title h4 mb-16">Mentor spirituel</a>
+										<p class="mb-24">“Un mariage ancré dans la foi est comme une maison bâtie sur le roc. Que votre union soit bénie, guidée et portée par l’amour de Dieu chaque jour de votre vie.”</p>
+										{# <a href="" class="cus-btn">
+											Read More
+											<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none">
+												<path d="M23.1946 4.93105L21.5122 4.93097V3.18948C21.5122 2.79078 21.2205 2.45203 20.8262 2.39304C20.7573 2.3827 19.1184 2.14464 17.1448 2.50375C14.9447 2.90407 13.19 3.8913 12 5.38374C10.8098 3.8913 9.05516 2.90407 6.85509 2.50375C4.88144 2.14472 3.24249 2.3827 3.17373 2.39304C2.77938 2.45211 2.48767 2.79086 2.48767 3.18948V4.93097H0.805331C0.360645 4.93097 0 5.29162 0 5.73639V20.9125C0 21.1733 0.126222 21.4179 0.338827 21.569C0.551432 21.7201 0.823997 21.7589 1.07022 21.6731C1.13066 21.6521 7.16563 19.5925 11.6657 21.6452C11.8781 21.7421 12.1219 21.7421 12.3343 21.6452C16.8218 19.5983 22.8697 21.6523 22.9298 21.6731C23.0161 21.7031 23.1055 21.7179 23.1945 21.7179C23.3596 21.7179 23.523 21.6672 23.6612 21.5691C23.8738 21.4179 24 21.1733 24 20.9126V5.73647C23.9999 5.2917 23.6394 4.93105 23.1946 4.93105ZM1.61074 19.8349V6.54172H2.48767V17.267C2.48767 17.501 2.59005 17.7233 2.7671 17.8762C2.94415 18.0292 3.17963 18.0978 3.41106 18.0636C3.4555 18.0572 6.95416 17.5768 9.51027 19.3306C6.36159 18.7922 3.21025 19.415 1.61074 19.8349ZM11.1946 18.6043C10.0688 17.5871 8.60239 16.8993 6.85509 16.5814C6.0142 16.4283 5.23408 16.3837 4.61025 16.3837C4.42504 16.3837 4.25356 16.3877 4.09849 16.3939V3.92904H4.09841C5.64628 3.85922 9.41168 4.02471 11.1946 7.04717V18.6043ZM12.8053 7.04725C14.5818 4.03772 18.3531 3.86471 19.9015 3.93106V16.3939C19.2241 16.3666 18.2353 16.3829 17.1448 16.5814C15.3975 16.8993 13.9311 17.587 12.8053 18.6043V7.04725ZM14.487 19.3311C17.0434 17.5763 20.5439 18.0571 20.5876 18.0635C20.8196 18.0984 21.0549 18.0302 21.2325 17.8773C21.4101 17.7242 21.5122 17.5015 21.5122 17.267V6.5418H22.3892V19.8349C20.7892 19.4148 17.6365 18.7918 14.487 19.3311Z"/>
+											</svg>
+											<span></span>
+										</a> #}
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="blog-card">
+									{# <figure>
+										<img src="{{asset('assets/media/blogs/b-2.png')}}" alt="">
+									</figure> #}
+									<div class="text-block">
+										<div class="top-row mb-24">
+											<div class="author">
+												<img src="{{asset('assets/media/users/icon-user.jpg')}}" alt="">
+												<span class="bold-text color-primary">Carla Gnahoré</span>
+											</div>
+											{# <span class="date">14 April, 2024</span> #}
+										</div>
+										<a href="" class="title h4 mb-16">Cousine de la mariée</a>
+										<p class="mb-24">“Quand on voit comment vous vous regardez, on comprend que l’amour n’a pas besoin de mots. Il suffit d’un regard, d’un silence partagé, d’une main tendue. Soyez heureux, intensément.”</p>
+										{# <a href="" class="cus-btn">
+											Read More
+											<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none">
+												<path d="M23.1946 4.93105L21.5122 4.93097V3.18948C21.5122 2.79078 21.2205 2.45203 20.8262 2.39304C20.7573 2.3827 19.1184 2.14464 17.1448 2.50375C14.9447 2.90407 13.19 3.8913 12 5.38374C10.8098 3.8913 9.05516 2.90407 6.85509 2.50375C4.88144 2.14472 3.24249 2.3827 3.17373 2.39304C2.77938 2.45211 2.48767 2.79086 2.48767 3.18948V4.93097H0.805331C0.360645 4.93097 0 5.29162 0 5.73639V20.9125C0 21.1733 0.126222 21.4179 0.338827 21.569C0.551432 21.7201 0.823997 21.7589 1.07022 21.6731C1.13066 21.6521 7.16563 19.5925 11.6657 21.6452C11.8781 21.7421 12.1219 21.7421 12.3343 21.6452C16.8218 19.5983 22.8697 21.6523 22.9298 21.6731C23.0161 21.7031 23.1055 21.7179 23.1945 21.7179C23.3596 21.7179 23.523 21.6672 23.6612 21.5691C23.8738 21.4179 24 21.1733 24 20.9126V5.73647C23.9999 5.2917 23.6394 4.93105 23.1946 4.93105ZM1.61074 19.8349V6.54172H2.48767V17.267C2.48767 17.501 2.59005 17.7233 2.7671 17.8762C2.94415 18.0292 3.17963 18.0978 3.41106 18.0636C3.4555 18.0572 6.95416 17.5768 9.51027 19.3306C6.36159 18.7922 3.21025 19.415 1.61074 19.8349ZM11.1946 18.6043C10.0688 17.5871 8.60239 16.8993 6.85509 16.5814C6.0142 16.4283 5.23408 16.3837 4.61025 16.3837C4.42504 16.3837 4.25356 16.3877 4.09849 16.3939V3.92904H4.09841C5.64628 3.85922 9.41168 4.02471 11.1946 7.04717V18.6043ZM12.8053 7.04725C14.5818 4.03772 18.3531 3.86471 19.9015 3.93106V16.3939C19.2241 16.3666 18.2353 16.3829 17.1448 16.5814C15.3975 16.8993 13.9311 17.587 12.8053 18.6043V7.04725ZM14.487 19.3311C17.0434 17.5763 20.5439 18.0571 20.5876 18.0635C20.8196 18.0984 21.0549 18.0302 21.2325 17.8773C21.4101 17.7242 21.5122 17.5015 21.5122 17.267V6.5418H22.3892V19.8349C20.7892 19.4148 17.6365 18.7918 14.487 19.3311Z"/>
+											</svg>
+											<span></span>
+										</a> #}
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="blog-card">
+									{# <figure>
+										<img src="{{asset('assets/media/blogs/b-3.png')}}" alt="">
+									</figure> #}
+									<div class="text-block">
+										<div class="top-row mb-24">
+											<div class="author">
+												<img src="{{asset('assets/media/users/icon-user.jpg')}}" alt="">
+												<span class="bold-text color-primary">Kevin et Prisca Koffi</span>
+											</div>
+											{# <span class="date">14 April, 2024</span> #}
+										</div>
+										<a href="" class="title h4 mb-16">Couple ami</a>
+										<p class="mb-24">“Vous êtes beaux, drôles, sincères… et surtout faits l’un pour l’autre ! Bienvenue dans l’aventure du mariage, avec ses hauts, ses bas, mais surtout ses mille raisons de s’aimer chaque jour plus fort.”</p>
+										{# <a href="" class="cus-btn">
+											Read More
+											<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none">
+												<path d="M23.1946 4.93105L21.5122 4.93097V3.18948C21.5122 2.79078 21.2205 2.45203 20.8262 2.39304C20.7573 2.3827 19.1184 2.14464 17.1448 2.50375C14.9447 2.90407 13.19 3.8913 12 5.38374C10.8098 3.8913 9.05516 2.90407 6.85509 2.50375C4.88144 2.14472 3.24249 2.3827 3.17373 2.39304C2.77938 2.45211 2.48767 2.79086 2.48767 3.18948V4.93097H0.805331C0.360645 4.93097 0 5.29162 0 5.73639V20.9125C0 21.1733 0.126222 21.4179 0.338827 21.569C0.551432 21.7201 0.823997 21.7589 1.07022 21.6731C1.13066 21.6521 7.16563 19.5925 11.6657 21.6452C11.8781 21.7421 12.1219 21.7421 12.3343 21.6452C16.8218 19.5983 22.8697 21.6523 22.9298 21.6731C23.0161 21.7031 23.1055 21.7179 23.1945 21.7179C23.3596 21.7179 23.523 21.6672 23.6612 21.5691C23.8738 21.4179 24 21.1733 24 20.9126V5.73647C23.9999 5.2917 23.6394 4.93105 23.1946 4.93105ZM1.61074 19.8349V6.54172H2.48767V17.267C2.48767 17.501 2.59005 17.7233 2.7671 17.8762C2.94415 18.0292 3.17963 18.0978 3.41106 18.0636C3.4555 18.0572 6.95416 17.5768 9.51027 19.3306C6.36159 18.7922 3.21025 19.415 1.61074 19.8349ZM11.1946 18.6043C10.0688 17.5871 8.60239 16.8993 6.85509 16.5814C6.0142 16.4283 5.23408 16.3837 4.61025 16.3837C4.42504 16.3837 4.25356 16.3877 4.09849 16.3939V3.92904H4.09841C5.64628 3.85922 9.41168 4.02471 11.1946 7.04717V18.6043ZM12.8053 7.04725C14.5818 4.03772 18.3531 3.86471 19.9015 3.93106V16.3939C19.2241 16.3666 18.2353 16.3829 17.1448 16.5814C15.3975 16.8993 13.9311 17.587 12.8053 18.6043V7.04725ZM14.487 19.3311C17.0434 17.5763 20.5439 18.0571 20.5876 18.0635C20.8196 18.0984 21.0549 18.0302 21.2325 17.8773C21.4101 17.7242 21.5122 17.5015 21.5122 17.267V6.5418H22.3892V19.8349C20.7892 19.4148 17.6365 18.7918 14.487 19.3311Z"/>
+											</svg>
+											<span></span>
+										</a> #}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slider-arrows d-lg-none mt-48">
+						<button class="arrow prev-btn" data-slide="blogs-slider">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 32 32" fill="none">
+								<path d="M12.6455 23C12.6455 20 9.84551 16 6.64551 16M6.64551 16C8.47884 16 12.6455 15 12.6455 9M6.64551 16H25.6455" stroke="#BE70A7" stroke-width="2" stroke-linecap="round"/>
+							</svg>
+						</button>
+						<button class="arrow next-btn" data-slide="blogs-slider">
+							<svg xmlns="http://www.w3.org/2000/svg" width="19" height="14" viewbox="0 0 19 14" fill="none">
+								<path d="M13 -1.1365e-06C13 3 15.8 7 19 7M19 7C17.1667 7 13 8 13 14M19 7L-6.11959e-07 7" stroke="#985A86" stroke-width="2"/>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</section>
+			<!-- Blogs Area End -->
+
+			<!-- Footer Section Start -->
+			<footer
+				class="footer">
+				<!-- Footer Main Start -->
+				<div class="footer-main">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="footer-block text-center">
+								<a href="{{path('app_front')}}" class="mb-32"><img src="{{asset('assets/media/logo.png')}}" alt=""></a>
+								<h2 class="h1 mb-32">Merci à vous</h2>
+								<div class="footer-bottom">
+									<p class="accent-dark text-center">@2025 All Rights Copyright Anick & Ange-Michel By <a class="bold-text" href="https://moussa-fofana.site" target="_blank">EMF Technologies</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Footer Main End -->
+
+			</footer>
+			<!-- Footer Section End -->
+		</main>
+
+		<!-- Mobile Menu Start -->
+		<div class="mobile-nav__wrapper">
+			<div class="mobile-nav__overlay mobile-nav__toggler"></div>
+			<div class="mobile-nav__content">
+				<span class="mobile-nav__close mobile-nav__toggler"></span>
+				<div class="logo-box">
+					<a href="{{path('app_front')}}" aria-label="logo image"><img src="{{asset('assets/media/logo.png')}}" alt="" class="invisible"></a>
+				</div>
+				<div class="mobile-nav__container"></div>
+				<ul class="mobile-nav__contact list-unstyled">
+					<li>
+						<i class="fas fa-envelope"></i>
+						<a href="mailto:reservation@anick-angemichel-loveland.com">reservation@anick-angemichel-loveland.com</a>
+					</li>
+					<li>
+						<i class="fa fa-phone-alt"></i>
+						<a href="tel:+225 07 09 983 493">+225 07 09 983 493</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- Mobile Menu End -->
+
+		<!-- back-to-top-start -->
+		<a href="#" class="scroll-top">
+			<svg class="scroll-top__circle" width="100%" height="100%" viewbox="-1 -1 102 102">
+				<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+			</svg>
+		</a>
+		<!-- back-to-top-end -->
+
+		<!-- Jquery Js -->
+		<script src="{{asset('assets/js/vendor/jquery-3.6.3.min.js')}}"></script>
+		<script src="{{asset('assets/js/vendor/bootstrap.min.js')}}"></script>
+		<script src="{{asset('assets/js/vendor/jquery-appear.js')}}"></script>
+		<script src="{{asset('assets/js/vendor/jquery-validator.js')}}"></script>
+		<script src="{{asset('assets/js/vendor/jquery.nice-select.min.js')}}"></script>
+		<script src="{{asset('assets/js/vendor/slick.min.js')}}"></script>
+		<script src="{{asset('assets/js/vendor/jquery.countdown.min.js')}}"></script>
+		<script src="{{asset('assets/js/vendor/wow.js')}}"></script>
+
+		<script src="{{asset('assets/js/app.js')}}"></script>
+
+	</body>
+
+</html>
