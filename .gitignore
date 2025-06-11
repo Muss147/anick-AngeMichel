@@ -4,6 +4,7 @@
 /.env.local.php
 /.env.*.local
 /config/secrets/prod/prod.decrypt.private.php
+/config/credentials/google-sheet-credentials.json
 /public/bundles/
 /var/
 /vendor/
