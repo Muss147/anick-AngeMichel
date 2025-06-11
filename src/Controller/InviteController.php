@@ -14,50 +14,66 @@ class InviteController extends AbstractController
 {
     public function __construct(private InviteManager $inviteManager) {}
 
-    #[Route('', name: 'api_invite_list', methods: ['GET'])]
+    #[Route('/generate-all-colomns', name: 'generateAllColomns', methods: ['GET'])]
+    public function generateAllColomns(): JsonResponse
+    {
+        $invites = $this->inviteManager->generateImagesForExistingInvites();
+        return $this->json($invites);
+    }
+
+    #[Route('', name: 'invite_list', methods: ['GET'])]
     public function list(): JsonResponse
     {
-        $invites = $this->inviteManager->getAllInvites();
+        $invites = $this->inviteManager->listInvites();
         return $this->json($invites);
     }
 
-    #[Route('/entrants', name: 'api_invite_entrants', methods: ['GET'])]
-    public function entrants(): JsonResponse
+    #[Route('/entres', name: 'invite_list_entres', methods: ['GET'])]
+    public function listEntres(): JsonResponse
     {
-        $invites = $this->inviteManager->getEnteredInvites();
+        $invites = $this->inviteManager->listCheckedInInvites();
         return $this->json($invites);
     }
 
-    #[Route('', name: 'api_invite_create', methods: ['POST'])]
-    public function create(Request $request): JsonResponse
+    #[Route('', name: 'invite_add', methods: ['POST'])]
+    public function add(Request $request): JsonResponse
     {
         $data = json_decode($request->getContent(), true);
+        if (!$data || !isset($data['Name'], $data['CountryCode'], $data['Phone'], $data['num_table'])) {
+            return $this->json(['error' => 'Missing required fields.'], Response::HTTP_BAD_REQUEST);
+        }
+
         $invite = $this->inviteManager->addInvite($data);
         return $this->json($invite, Response::HTTP_CREATED);
     }
 
-    #[Route('/{id}', name: 'api_invite_update', methods: ['PUT'])]
-    public function update(string $id, Request $request): JsonResponse
+    #[Route('/{rowIndex}', name: 'invite_update', methods: ['PUT'])]
+    public function update(int $rowIndex, Request $request): JsonResponse
     {
         $data = json_decode($request->getContent(), true);
-        $invite = $this->inviteManager->updateInvite($id, $data);
+        if (!$data) {
+            return $this->json(['error' => 'Invalid data.'], Response::HTTP_BAD_REQUEST);
+        }
+
+        $invite = $this->inviteManager->updateInvite($rowIndex, $data);
         return $this->json($invite);
     }
 
-    #[Route('/{id}', name: 'api_invite_delete', methods: ['DELETE'])]
-    public function delete(string $id): JsonResponse
+    #[Route('/{rowIndex}', name: 'invite_delete', methods: ['DELETE'])]
+    public function delete(int $rowIndex): JsonResponse
     {
-        $this->inviteManager->deleteInvite($id);
-        return $this->json(['message' => 'Invité supprimé.']);
+        $this->inviteManager->deleteInvite($rowIndex);
+        return $this->json(['message' => 'Invite deleted successfully.']);
     }
 
-    #[Route('/scan/{code}', name: 'api_invite_scan', methods: ['GET'])]
-    public function findByQRCode(string $code): JsonResponse
+    #[Route('/scan/{id}', name: 'invite_by_qr', methods: ['GET'])]
+    public function getByQrId(string $id): JsonResponse
     {
-        $invite = $this->inviteManager->getInviteByQrCode($code);
+        $invite = $this->inviteManager->findInviteByQrId($id);
         if (!$invite) {
-            return $this->json(['message' => 'Invité non trouvé'], 404);
+            return $this->json(['error' => 'Invite not found.'], Response::HTTP_NOT_FOUND);
         }
+
         return $this->json($invite);
     }
 }
