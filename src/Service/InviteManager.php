@@ -8,8 +8,11 @@ use Google_Service_Sheets_ValueRange;
 use Symfony\Component\Filesystem\Filesystem;
 use Endroid\QrCode\Builder\Builder;
 use Endroid\QrCode\Writer\PngWriter;
-use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
+use Endroid\QrCode\Color\Color;
+use Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelHigh;
 use Imagick;
+use ImagickDraw;
+use ImagickPixel;
 
 class InviteManager
 {
@@ -51,7 +54,7 @@ class InviteManager
     {
         $uniqueId = uniqid('invite_', true);
         $qrPath = $this->generateQrCode($uniqueId);
-        $finalImagePath = $this->mergeQrCodeWithImage($qrPath, $uniqueId);
+        $finalImagePath = $this->mergeQrCodeWithImage($qrPath, $uniqueId, $inviteData['name']);
 
         $row = [
             $inviteData['name'],
@@ -91,7 +94,7 @@ class InviteManager
                 }
 
                 $qrPath = $this->generateQrCode($uniqueId);
-                $finalImagePath = $this->mergeQrCodeWithImage($qrPath, $uniqueId);
+                $finalImagePath = $this->mergeQrCodeWithImage($qrPath, $uniqueId, $newData['name']);
 
                 $updatedRow = [
                     $newData['name'],
@@ -177,44 +180,60 @@ class InviteManager
         return $response->getValues() ?? [];
     }
 
-    private function generateQrCode(string $data): string
+    private function generateQrCode(string $data): Imagick
     {
         $result = Builder::create()
-            ->writer(new PngWriter())
-            ->data($data)
+            ->writer(new PngWriter()) // Utilisez PngWriter
+            ->data($data)             // Assurez-vous que $data est bien votre URL
             ->size(300)
             ->margin(10)
-            ->foregroundColor(66, 87, 67)
-            ->backgroundColor(255, 255, 255)
+            ->errorCorrectionLevel(new ErrorCorrectionLevelHigh())
+            ->foregroundColor(new Color(66, 87, 67))
+            ->backgroundColor(new Color(255, 255, 255))
             ->build();
 
-        $qrPath = $this->imageDirectory . '/' . $data . '_qr.png';
-        $result->saveToFile($qrPath);
+        // On crée un objet Imagick à partir de l’image PNG
+        $imageData = $result->getString(); // Donne les données binaires de l'image
+        $imagick = new Imagick();
+        $imagick->readImageBlob($imageData); // On charge l’image dans Imagick
 
-        return $qrPath;
+        return $imagick;
     }
 
-    private function mergeQrCodeWithImage(string $qrPath, string $identifier): string
+    private function mergeQrCodeWithImage(Imagick $qr, string $identifier, string $inviteName): string
     {
         $baseImagePath = $this->imageDirectory . '/modele_invitation.png';
         $outputImagePath = $this->imageDirectory . '/' . $identifier . '_final.png';
 
         $base = new Imagick($baseImagePath);
-        $qr = new Imagick($qrPath);
 
         $baseWidth = $base->getImageWidth();
         $qrWidth = $qr->getImageWidth();
 
         $x = (int)(($baseWidth - $qrWidth) / 2);
-        $y = $base->getImageHeight() - $qrWidth - 300;
+        $y = $base->getImageHeight() - $qrWidth - 470;
 
         $base->compositeImage($qr, Imagick::COMPOSITE_OVER, $x, $y);
+
+        // Ajout du nom
+        $draw = new ImagickDraw();
+        $draw->setFont(__DIR__ . '/../../public/assets/fonts/PublicSans-Regular.ttf');
+        $draw->setFontSize(8.5 * 4);
+        $draw->setFillColor(new ImagickPixel('#425743'));
+
+        $metrics = $base->queryFontMetrics($draw, $inviteName);
+        $textWidth = $metrics['textWidth'];
+        $textX = ($base->getImageWidth() - $textWidth) / 2;
+        $textY = 175;
+
+        $base->annotateImage($draw, $textX, $textY, 0, $inviteName);
+
         $base->writeImage($outputImagePath);
 
         $qr->clear();
         $base->clear();
 
-        return 'assets/docs/' . basename($outputImagePath);
+        return 'https://anick-angemichel-loveland.com/assets/docs/' . basename($outputImagePath);
     }
     
     public function generateImagesForExistingInvites(): void
@@ -225,17 +244,30 @@ class InviteManager
             if ($index === 0) {
                 continue;
             }
+            
+            // Vérifie si la colonne F (index 5) contient déjà une image
+            if (!empty($row[5])) {
+                continue; // Passe à la ligne suivante
+            }
+
+            // Vérifie si la colonne C (index 2) est vide
+            if (empty($row[2])) {
+                continue; // Passe à la ligne suivante
+            }
 
             // Récupère ou crée l'ID unique
             $uniqueId = $row[10] ?? uniqid('invite_', true);
+            // Récupère le nom de l'invité
+            $guestName = $row[0].',';
 
             // Génére le QR code et fusionne avec l’image
-            $qrPath = $this->generateQrCode($uniqueId);
-            $finalImagePath = $this->mergeQrCodeWithImage($qrPath, $uniqueId);
+            $qrImagick = $this->generateQrCode($uniqueId);
+            $finalImagePath = $this->mergeQrCodeWithImage($qrImagick, $uniqueId, $guestName);
 
             // Met à jour la cellule dans la colonne F (colonne 5 = index 5)
-            $updatedRow = $row;
+            $updatedRow = array_pad($row, 11, '');
             $updatedRow[5] = $finalImagePath;
+            $updatedRow[8] = date("d/m/Y");
             $updatedRow[10] = $uniqueId;
 
             // Mets à jour la ligne dans la feuille
