@@ -67,9 +67,14 @@ class InviteController extends AbstractController
     }
 
     #[Route('/scan/{id}', name: 'invite_by_qr', methods: ['GET'])]
-    public function getByQrId(string $id): JsonResponse
+    public function getByQrId(string $id): Response
     {
-        $invite = $this->inviteManager->findInviteByQrId($id);
+        // Vérifie si l'utilisateur est connecté
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('app_front'); // Nom de ta route d’accueil
+        }
+
+        $invite = $this->inviteManager->findInviteByQr($id);
         if (!$invite) {
             return $this->json(['error' => 'Invite not found.'], Response::HTTP_NOT_FOUND);
         }

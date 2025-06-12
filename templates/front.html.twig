@@ -311,6 +311,23 @@ Contact: +225 07 471 612 21
 								<div class="row">
 									<div class="col-md-6 order-md-2 wow fadeInRight" alt="" data-wow-delay="300ms">
 										<div class="story-image text-center">
+											<img src="{{asset('assets/media/images/story-3.png')}}" alt="">
+										</div>
+									</div>
+									<div class="col-md-6 order-md-1 wow fadeInLeft" alt="" data-wow-delay="500ms">
+										<div class="text-block v-2">
+											<h6 class="color-primary mb-8">Puis à 19H00</h6>
+											<h4 class="mb-24">Le Dîner</h4>
+											<p>La soirée se poursuivra autour d’une table élégante, où les saveurs se mêleront aux souvenirs et aux discours chargés d’émotion. Un repas préparé avec soin pour honorer votre présence, dans une atmosphère chaleureuse et festive avant que la piste ne s’illumine…</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							{# <div class="block st-2">
+								<img src="{{asset('assets/media/icons/heart.png')}}" alt="" class="heart-icon">
+								<div class="row">
+									<div class="col-md-6 order-md-2 wow fadeInRight" alt="" data-wow-delay="300ms">
+										<div class="story-image text-center">
 											<img src="{{asset('assets/media/images/story-2.png')}}" alt="">
 										</div>
 									</div>
@@ -339,7 +356,7 @@ Contact: +225 07 471 612 21
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> #}
 						</div>
 					</div>
 				</div>
@@ -408,13 +425,13 @@ Contact: +225 07 471 612 21
 							<div class="col-xl-6 col-lg-6 col-md-8 wow fadeInUp" alt="" data-wow-delay="300ms">
 								<div class="inquiry-form">
 									<div class="app-heading mb-32">
-										<h4 class="light-black mb-8">Serez-vous présent ?</h4>
-										<p>Veuillez réserver avant le
+										<h4 class="light-black mb-8">Laissez-nous un beau message !</h4>
+										<p>Il sera gravé dans le temps ainsi que 
 											<span class="color-primary">
-												28 juin, 2025</span>
+												dans notre coeur</span>
 										</p>
 									</div>
-									<form action="{{path('app_front')}}" class="form-group form-validation">
+									<form action="{{path('post_message')}}" method="POST" class="form-group form-validation">
 										<div class="row">
 											<div class="col-sm-6">
 												<div class="mb-24">
@@ -424,56 +441,18 @@ Contact: +225 07 471 612 21
 
 											<div class="col-sm-6">
 												<div class="mb-24">
-													<input type="phone" class="cus-form-control" name="email" id="eMail" placeholder="Numéro de téléphone" required>
+													<input type="text" class="cus-form-control" name="lien" id="eMail" placeholder="Lien avec les mariés" required>
 												</div>
 											</div>
 
 											<div class="col-sm-12">
 												<div class="mb-24">
-													<select name="select" class="has-nice-select cus-form-control" id="selectGuest" required>
-														<option value="">Nombre d'invités</option>
-														<option value="50">1 - 3</option>
-														<option value="100">1 - 5
-														</option>
-														<option value="150">1 - 6
-														</option>
-													</select>
+													<textarea name="message" rows="3" class="cus-form-control px-2 py-3" placeholder="Nous vous écoutons..." required></textarea>
 												</div>
-											</div>
-											{# <div class="col-sm-6">
-												<div class="mt-sm-0 mt-24">
-													<select name="select" class="has-nice-select cus-form-control" id="selectMeal" required>
-														<option value="">Meal Preferences</option>
-														<option value="Chinese">Chinese Food</option>
-														<option value="Italian">Italian Food</option>
-														<option value="Mexican">Mexican Food</option>
-														<option value="Asian">Asian Food</option>
-														<option value="Fisher">Others</option>
-													</select>
-												</div>
-											</div> #}
-											<div class="col-sm-12">
-												<div class="radio-container mt-32 mb-32">
-													<div class="radio-wrapper">
-														<label class="radio-button">
-															<input id="option1" name="radio-group" type="radio" checked>
-															<span class="radio-checkmark"></span>
-															<span class="radio-label">Oui, je serai là</span>
-														</label>
-													</div>
-													<div class="radio-wrapper">
-														<label class="radio-button">
-															<input id="option2" name="radio-group" type="radio">
-															<span class="radio-checkmark"></span>
-															<span class="radio-label">Désolé, je ne peux pas venir</span>
-														</label>
-													</div>
-												</div>
-
 											</div>
 											<div class="col-sm-12">
 												<button type="submit" class="cus-btn">
-													Envoyer une demande
+													Envoyer mon message
 													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
 														<g clip-path="url(#clip0_9589_953)">
 															<path d="M2.72936 16.4958C2.27959 16.046 1.88017 15.5685 1.52537 15.0762C0.909202 15.4623 0.452405 15.824 0.229889 16.0099C0.140545 16.0845 0.119405 16.2129 0.180061 16.3122C0.642483 17.0698 2.6544 20.0927 5.58245 20.5754C6.8769 20.7888 8.16086 20.4744 9.24972 20.0082C7.30656 19.5107 4.74123 18.5078 2.72936 16.4958Z" fill="#43273A"/>
@@ -566,156 +545,47 @@ Contact: +225 07 471 612 21
 							</svg>
 						</button>
 						<div class="row blogs-slider">
+							{% for message in messages|reverse %}
 							<div class="col-lg-4">
 								<div class="blog-card">
-									{# <figure>
-										<img src="{{asset('assets/media/blogs/b-1.png')}}" alt="">
-									</figure> #}
 									<div class="text-block">
 										<div class="top-row mb-24">
 											<div class="author">
 												<img src="{{asset('assets/media/users/icon-user.jpg')}}" alt="">
-												<span class="bold-text color-primary">Sophie Kouadio</span>
+												<span class="bold-text color-primary">{{message.Nom}}</span>
 											</div>
-											{# <span class="date">14 April, 2025</span> #}
 										</div>
-										<a href="" class="title h4 mb-16">Amie d’enfance de la mariée</a>
-										<p class="mb-24">“Depuis les bancs de l’école jusqu’à ce grand jour, j’ai vu ton cœur grandir, s’ouvrir et s’épanouir. Tu as trouvé un amour à ta mesure : profond, vrai, lumineux. Je vous souhaite une vie pleine de complicité et de douce folie.”</p>
-										{# <a href="" class="cus-btn">
-											Read More
-											<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none">
-												<path d="M23.1946 4.93105L21.5122 4.93097V3.18948C21.5122 2.79078 21.2205 2.45203 20.8262 2.39304C20.7573 2.3827 19.1184 2.14464 17.1448 2.50375C14.9447 2.90407 13.19 3.8913 12 5.38374C10.8098 3.8913 9.05516 2.90407 6.85509 2.50375C4.88144 2.14472 3.24249 2.3827 3.17373 2.39304C2.77938 2.45211 2.48767 2.79086 2.48767 3.18948V4.93097H0.805331C0.360645 4.93097 0 5.29162 0 5.73639V20.9125C0 21.1733 0.126222 21.4179 0.338827 21.569C0.551432 21.7201 0.823997 21.7589 1.07022 21.6731C1.13066 21.6521 7.16563 19.5925 11.6657 21.6452C11.8781 21.7421 12.1219 21.7421 12.3343 21.6452C16.8218 19.5983 22.8697 21.6523 22.9298 21.6731C23.0161 21.7031 23.1055 21.7179 23.1945 21.7179C23.3596 21.7179 23.523 21.6672 23.6612 21.5691C23.8738 21.4179 24 21.1733 24 20.9126V5.73647C23.9999 5.2917 23.6394 4.93105 23.1946 4.93105ZM1.61074 19.8349V6.54172H2.48767V17.267C2.48767 17.501 2.59005 17.7233 2.7671 17.8762C2.94415 18.0292 3.17963 18.0978 3.41106 18.0636C3.4555 18.0572 6.95416 17.5768 9.51027 19.3306C6.36159 18.7922 3.21025 19.415 1.61074 19.8349ZM11.1946 18.6043C10.0688 17.5871 8.60239 16.8993 6.85509 16.5814C6.0142 16.4283 5.23408 16.3837 4.61025 16.3837C4.42504 16.3837 4.25356 16.3877 4.09849 16.3939V3.92904H4.09841C5.64628 3.85922 9.41168 4.02471 11.1946 7.04717V18.6043ZM12.8053 7.04725C14.5818 4.03772 18.3531 3.86471 19.9015 3.93106V16.3939C19.2241 16.3666 18.2353 16.3829 17.1448 16.5814C15.3975 16.8993 13.9311 17.587 12.8053 18.6043V7.04725ZM14.487 19.3311C17.0434 17.5763 20.5439 18.0571 20.5876 18.0635C20.8196 18.0984 21.0549 18.0302 21.2325 17.8773C21.4101 17.7242 21.5122 17.5015 21.5122 17.267V6.5418H22.3892V19.8349C20.7892 19.4148 17.6365 18.7918 14.487 19.3311Z"/>
-											</svg>
-											<span></span>
-										</a> #}
+										<span class="title h4 mb-16">{{message.Lien}}</span>
+										<p class="mb-24" {% if message.Message|length >= 93 %}title="{{message.Message|raw}}"{% endif %}>“{{message.Message|raw}}”</p>
 									</div>
 								</div>
 							</div>
-							<div class="col-lg-4">
+							{% endfor %}
+							{# <div class="col-lg-4">
 								<div class="blog-card">
-									{# <figure>
-										<img src="{{asset('assets/media/blogs/b-2.png')}}" alt="">
-									</figure> #}
-									<div class="text-block">
-										<div class="top-row mb-24">
-											<div class="author">
-												<img src="{{asset('assets/media/users/icon-user.jpg')}}" alt="">
-												<span class="bold-text color-primary">Marc Djédjé</span>
-											</div>
-											{# <span class="date">14 April, 2024</span> #}
-										</div>
-										<a href="" class="title h4 mb-16">Collègue et ami du marié</a>
-										<p class="mb-24">“Tu as toujours été un homme de parole, d’engagement et de loyauté. Voir ton regard aujourd’hui en dit long : tu as trouvé ta paix, ton foyer, ton avenir. Bravo frère ! Que Dieu veille sur votre bonheur.”</p>
-										{# <a href="" class="cus-btn">
-											Read More
-											<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none">
-												<path d="M23.1946 4.93105L21.5122 4.93097V3.18948C21.5122 2.79078 21.2205 2.45203 20.8262 2.39304C20.7573 2.3827 19.1184 2.14464 17.1448 2.50375C14.9447 2.90407 13.19 3.8913 12 5.38374C10.8098 3.8913 9.05516 2.90407 6.85509 2.50375C4.88144 2.14472 3.24249 2.3827 3.17373 2.39304C2.77938 2.45211 2.48767 2.79086 2.48767 3.18948V4.93097H0.805331C0.360645 4.93097 0 5.29162 0 5.73639V20.9125C0 21.1733 0.126222 21.4179 0.338827 21.569C0.551432 21.7201 0.823997 21.7589 1.07022 21.6731C1.13066 21.6521 7.16563 19.5925 11.6657 21.6452C11.8781 21.7421 12.1219 21.7421 12.3343 21.6452C16.8218 19.5983 22.8697 21.6523 22.9298 21.6731C23.0161 21.7031 23.1055 21.7179 23.1945 21.7179C23.3596 21.7179 23.523 21.6672 23.6612 21.5691C23.8738 21.4179 24 21.1733 24 20.9126V5.73647C23.9999 5.2917 23.6394 4.93105 23.1946 4.93105ZM1.61074 19.8349V6.54172H2.48767V17.267C2.48767 17.501 2.59005 17.7233 2.7671 17.8762C2.94415 18.0292 3.17963 18.0978 3.41106 18.0636C3.4555 18.0572 6.95416 17.5768 9.51027 19.3306C6.36159 18.7922 3.21025 19.415 1.61074 19.8349ZM11.1946 18.6043C10.0688 17.5871 8.60239 16.8993 6.85509 16.5814C6.0142 16.4283 5.23408 16.3837 4.61025 16.3837C4.42504 16.3837 4.25356 16.3877 4.09849 16.3939V3.92904H4.09841C5.64628 3.85922 9.41168 4.02471 11.1946 7.04717V18.6043ZM12.8053 7.04725C14.5818 4.03772 18.3531 3.86471 19.9015 3.93106V16.3939C19.2241 16.3666 18.2353 16.3829 17.1448 16.5814C15.3975 16.8993 13.9311 17.587 12.8053 18.6043V7.04725ZM14.487 19.3311C17.0434 17.5763 20.5439 18.0571 20.5876 18.0635C20.8196 18.0984 21.0549 18.0302 21.2325 17.8773C21.4101 17.7242 21.5122 17.5015 21.5122 17.267V6.5418H22.3892V19.8349C20.7892 19.4148 17.6365 18.7918 14.487 19.3311Z"/>
-											</svg>
-											<span></span>
-										</a> #}
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4">
-								<div class="blog-card">
-									{# <figure>
+									<figure>
 										<img src="{{asset('assets/media/blogs/b-3.png')}}" alt="">
-									</figure> #}
-									<div class="text-block">
-										<div class="top-row mb-24">
-											<div class="author">
-												<img src="{{asset('assets/media/users/icon-user.jpg')}}" alt="">
-												<span class="bold-text color-primary">Mélanie & Jules Akissi</span>
-											</div>
-											{# <span class="date">14 April, 2024</span> #}
-										</div>
-										<a href="" class="title h4 mb-16">Amis du couple</a>
-										<p class="mb-24">“L’amour, c’est savoir danser sous la pluie, rire aux éclats à minuit, et se tenir la main quand tout vacille. Vous incarnez tout cela, et plus encore. Merci de nous inspirer. On vous aime fort !”</p>
-										{# <a href="" class="cus-btn">
-											Read More
-											<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none">
-												<path d="M23.1946 4.93105L21.5122 4.93097V3.18948C21.5122 2.79078 21.2205 2.45203 20.8262 2.39304C20.7573 2.3827 19.1184 2.14464 17.1448 2.50375C14.9447 2.90407 13.19 3.8913 12 5.38374C10.8098 3.8913 9.05516 2.90407 6.85509 2.50375C4.88144 2.14472 3.24249 2.3827 3.17373 2.39304C2.77938 2.45211 2.48767 2.79086 2.48767 3.18948V4.93097H0.805331C0.360645 4.93097 0 5.29162 0 5.73639V20.9125C0 21.1733 0.126222 21.4179 0.338827 21.569C0.551432 21.7201 0.823997 21.7589 1.07022 21.6731C1.13066 21.6521 7.16563 19.5925 11.6657 21.6452C11.8781 21.7421 12.1219 21.7421 12.3343 21.6452C16.8218 19.5983 22.8697 21.6523 22.9298 21.6731C23.0161 21.7031 23.1055 21.7179 23.1945 21.7179C23.3596 21.7179 23.523 21.6672 23.6612 21.5691C23.8738 21.4179 24 21.1733 24 20.9126V5.73647C23.9999 5.2917 23.6394 4.93105 23.1946 4.93105ZM1.61074 19.8349V6.54172H2.48767V17.267C2.48767 17.501 2.59005 17.7233 2.7671 17.8762C2.94415 18.0292 3.17963 18.0978 3.41106 18.0636C3.4555 18.0572 6.95416 17.5768 9.51027 19.3306C6.36159 18.7922 3.21025 19.415 1.61074 19.8349ZM11.1946 18.6043C10.0688 17.5871 8.60239 16.8993 6.85509 16.5814C6.0142 16.4283 5.23408 16.3837 4.61025 16.3837C4.42504 16.3837 4.25356 16.3877 4.09849 16.3939V3.92904H4.09841C5.64628 3.85922 9.41168 4.02471 11.1946 7.04717V18.6043ZM12.8053 7.04725C14.5818 4.03772 18.3531 3.86471 19.9015 3.93106V16.3939C19.2241 16.3666 18.2353 16.3829 17.1448 16.5814C15.3975 16.8993 13.9311 17.587 12.8053 18.6043V7.04725ZM14.487 19.3311C17.0434 17.5763 20.5439 18.0571 20.5876 18.0635C20.8196 18.0984 21.0549 18.0302 21.2325 17.8773C21.4101 17.7242 21.5122 17.5015 21.5122 17.267V6.5418H22.3892V19.8349C20.7892 19.4148 17.6365 18.7918 14.487 19.3311Z"/>
-											</svg>
-											<span></span>
-										</a> #}
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4">
-								<div class="blog-card">
-									{# <figure>
-										<img src="{{asset('assets/media/blogs/b-1.png')}}" alt="">
-									</figure> #}
-									<div class="text-block">
-										<div class="top-row mb-24">
-											<div class="author">
-												<img src="{{asset('assets/media/users/icon-user.jpg')}}" alt="">
-												<span class="bold-text color-primary">Pasteur Benjamin Yao</span>
-											</div>
-											{# <span class="date">14 April, 2024</span> #}
-										</div>
-										<a href="" class="title h4 mb-16">Mentor spirituel</a>
-										<p class="mb-24">“Un mariage ancré dans la foi est comme une maison bâtie sur le roc. Que votre union soit bénie, guidée et portée par l’amour de Dieu chaque jour de votre vie.”</p>
-										{# <a href="" class="cus-btn">
-											Read More
-											<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none">
-												<path d="M23.1946 4.93105L21.5122 4.93097V3.18948C21.5122 2.79078 21.2205 2.45203 20.8262 2.39304C20.7573 2.3827 19.1184 2.14464 17.1448 2.50375C14.9447 2.90407 13.19 3.8913 12 5.38374C10.8098 3.8913 9.05516 2.90407 6.85509 2.50375C4.88144 2.14472 3.24249 2.3827 3.17373 2.39304C2.77938 2.45211 2.48767 2.79086 2.48767 3.18948V4.93097H0.805331C0.360645 4.93097 0 5.29162 0 5.73639V20.9125C0 21.1733 0.126222 21.4179 0.338827 21.569C0.551432 21.7201 0.823997 21.7589 1.07022 21.6731C1.13066 21.6521 7.16563 19.5925 11.6657 21.6452C11.8781 21.7421 12.1219 21.7421 12.3343 21.6452C16.8218 19.5983 22.8697 21.6523 22.9298 21.6731C23.0161 21.7031 23.1055 21.7179 23.1945 21.7179C23.3596 21.7179 23.523 21.6672 23.6612 21.5691C23.8738 21.4179 24 21.1733 24 20.9126V5.73647C23.9999 5.2917 23.6394 4.93105 23.1946 4.93105ZM1.61074 19.8349V6.54172H2.48767V17.267C2.48767 17.501 2.59005 17.7233 2.7671 17.8762C2.94415 18.0292 3.17963 18.0978 3.41106 18.0636C3.4555 18.0572 6.95416 17.5768 9.51027 19.3306C6.36159 18.7922 3.21025 19.415 1.61074 19.8349ZM11.1946 18.6043C10.0688 17.5871 8.60239 16.8993 6.85509 16.5814C6.0142 16.4283 5.23408 16.3837 4.61025 16.3837C4.42504 16.3837 4.25356 16.3877 4.09849 16.3939V3.92904H4.09841C5.64628 3.85922 9.41168 4.02471 11.1946 7.04717V18.6043ZM12.8053 7.04725C14.5818 4.03772 18.3531 3.86471 19.9015 3.93106V16.3939C19.2241 16.3666 18.2353 16.3829 17.1448 16.5814C15.3975 16.8993 13.9311 17.587 12.8053 18.6043V7.04725ZM14.487 19.3311C17.0434 17.5763 20.5439 18.0571 20.5876 18.0635C20.8196 18.0984 21.0549 18.0302 21.2325 17.8773C21.4101 17.7242 21.5122 17.5015 21.5122 17.267V6.5418H22.3892V19.8349C20.7892 19.4148 17.6365 18.7918 14.487 19.3311Z"/>
-											</svg>
-											<span></span>
-										</a> #}
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4">
-								<div class="blog-card">
-									{# <figure>
-										<img src="{{asset('assets/media/blogs/b-2.png')}}" alt="">
-									</figure> #}
-									<div class="text-block">
-										<div class="top-row mb-24">
-											<div class="author">
-												<img src="{{asset('assets/media/users/icon-user.jpg')}}" alt="">
-												<span class="bold-text color-primary">Carla Gnahoré</span>
-											</div>
-											{# <span class="date">14 April, 2024</span> #}
-										</div>
-										<a href="" class="title h4 mb-16">Cousine de la mariée</a>
-										<p class="mb-24">“Quand on voit comment vous vous regardez, on comprend que l’amour n’a pas besoin de mots. Il suffit d’un regard, d’un silence partagé, d’une main tendue. Soyez heureux, intensément.”</p>
-										{# <a href="" class="cus-btn">
-											Read More
-											<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none">
-												<path d="M23.1946 4.93105L21.5122 4.93097V3.18948C21.5122 2.79078 21.2205 2.45203 20.8262 2.39304C20.7573 2.3827 19.1184 2.14464 17.1448 2.50375C14.9447 2.90407 13.19 3.8913 12 5.38374C10.8098 3.8913 9.05516 2.90407 6.85509 2.50375C4.88144 2.14472 3.24249 2.3827 3.17373 2.39304C2.77938 2.45211 2.48767 2.79086 2.48767 3.18948V4.93097H0.805331C0.360645 4.93097 0 5.29162 0 5.73639V20.9125C0 21.1733 0.126222 21.4179 0.338827 21.569C0.551432 21.7201 0.823997 21.7589 1.07022 21.6731C1.13066 21.6521 7.16563 19.5925 11.6657 21.6452C11.8781 21.7421 12.1219 21.7421 12.3343 21.6452C16.8218 19.5983 22.8697 21.6523 22.9298 21.6731C23.0161 21.7031 23.1055 21.7179 23.1945 21.7179C23.3596 21.7179 23.523 21.6672 23.6612 21.5691C23.8738 21.4179 24 21.1733 24 20.9126V5.73647C23.9999 5.2917 23.6394 4.93105 23.1946 4.93105ZM1.61074 19.8349V6.54172H2.48767V17.267C2.48767 17.501 2.59005 17.7233 2.7671 17.8762C2.94415 18.0292 3.17963 18.0978 3.41106 18.0636C3.4555 18.0572 6.95416 17.5768 9.51027 19.3306C6.36159 18.7922 3.21025 19.415 1.61074 19.8349ZM11.1946 18.6043C10.0688 17.5871 8.60239 16.8993 6.85509 16.5814C6.0142 16.4283 5.23408 16.3837 4.61025 16.3837C4.42504 16.3837 4.25356 16.3877 4.09849 16.3939V3.92904H4.09841C5.64628 3.85922 9.41168 4.02471 11.1946 7.04717V18.6043ZM12.8053 7.04725C14.5818 4.03772 18.3531 3.86471 19.9015 3.93106V16.3939C19.2241 16.3666 18.2353 16.3829 17.1448 16.5814C15.3975 16.8993 13.9311 17.587 12.8053 18.6043V7.04725ZM14.487 19.3311C17.0434 17.5763 20.5439 18.0571 20.5876 18.0635C20.8196 18.0984 21.0549 18.0302 21.2325 17.8773C21.4101 17.7242 21.5122 17.5015 21.5122 17.267V6.5418H22.3892V19.8349C20.7892 19.4148 17.6365 18.7918 14.487 19.3311Z"/>
-											</svg>
-											<span></span>
-										</a> #}
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4">
-								<div class="blog-card">
-									{# <figure>
-										<img src="{{asset('assets/media/blogs/b-3.png')}}" alt="">
-									</figure> #}
+									</figure>
 									<div class="text-block">
 										<div class="top-row mb-24">
 											<div class="author">
 												<img src="{{asset('assets/media/users/icon-user.jpg')}}" alt="">
 												<span class="bold-text color-primary">Kevin et Prisca Koffi</span>
 											</div>
-											{# <span class="date">14 April, 2024</span> #}
+											<span class="date">14 April, 2024</span>
 										</div>
 										<a href="" class="title h4 mb-16">Couple ami</a>
 										<p class="mb-24">“Vous êtes beaux, drôles, sincères… et surtout faits l’un pour l’autre ! Bienvenue dans l’aventure du mariage, avec ses hauts, ses bas, mais surtout ses mille raisons de s’aimer chaque jour plus fort.”</p>
-										{# <a href="" class="cus-btn">
+										<a href="" class="cus-btn">
 											Read More
 											<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none">
 												<path d="M23.1946 4.93105L21.5122 4.93097V3.18948C21.5122 2.79078 21.2205 2.45203 20.8262 2.39304C20.7573 2.3827 19.1184 2.14464 17.1448 2.50375C14.9447 2.90407 13.19 3.8913 12 5.38374C10.8098 3.8913 9.05516 2.90407 6.85509 2.50375C4.88144 2.14472 3.24249 2.3827 3.17373 2.39304C2.77938 2.45211 2.48767 2.79086 2.48767 3.18948V4.93097H0.805331C0.360645 4.93097 0 5.29162 0 5.73639V20.9125C0 21.1733 0.126222 21.4179 0.338827 21.569C0.551432 21.7201 0.823997 21.7589 1.07022 21.6731C1.13066 21.6521 7.16563 19.5925 11.6657 21.6452C11.8781 21.7421 12.1219 21.7421 12.3343 21.6452C16.8218 19.5983 22.8697 21.6523 22.9298 21.6731C23.0161 21.7031 23.1055 21.7179 23.1945 21.7179C23.3596 21.7179 23.523 21.6672 23.6612 21.5691C23.8738 21.4179 24 21.1733 24 20.9126V5.73647C23.9999 5.2917 23.6394 4.93105 23.1946 4.93105ZM1.61074 19.8349V6.54172H2.48767V17.267C2.48767 17.501 2.59005 17.7233 2.7671 17.8762C2.94415 18.0292 3.17963 18.0978 3.41106 18.0636C3.4555 18.0572 6.95416 17.5768 9.51027 19.3306C6.36159 18.7922 3.21025 19.415 1.61074 19.8349ZM11.1946 18.6043C10.0688 17.5871 8.60239 16.8993 6.85509 16.5814C6.0142 16.4283 5.23408 16.3837 4.61025 16.3837C4.42504 16.3837 4.25356 16.3877 4.09849 16.3939V3.92904H4.09841C5.64628 3.85922 9.41168 4.02471 11.1946 7.04717V18.6043ZM12.8053 7.04725C14.5818 4.03772 18.3531 3.86471 19.9015 3.93106V16.3939C19.2241 16.3666 18.2353 16.3829 17.1448 16.5814C15.3975 16.8993 13.9311 17.587 12.8053 18.6043V7.04725ZM14.487 19.3311C17.0434 17.5763 20.5439 18.0571 20.5876 18.0635C20.8196 18.0984 21.0549 18.0302 21.2325 17.8773C21.4101 17.7242 21.5122 17.5015 21.5122 17.267V6.5418H22.3892V19.8349C20.7892 19.4148 17.6365 18.7918 14.487 19.3311Z"/>
 											</svg>
 											<span></span>
-										</a> #}
+										</a>
 									</div>
 								</div>
-							</div>
+							</div> #}
 						</div>
 					</div>
 					<div class="slider-arrows d-lg-none mt-48">
@@ -799,7 +669,13 @@ Contact: +225 07 471 612 21
 		<script src="{{asset('assets/js/vendor/wow.js')}}"></script>
 
 		<script src="{{asset('assets/js/app.js')}}"></script>
-
+		<script type="text/javascript">
+			{% for type, messages in app.flashes %}
+				{% for message in messages %}
+					alert('{{message}}')
+				{% endfor %}
+			{% endfor %}
+		</script>
 	</body>
 
 </html>

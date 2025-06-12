@@ -261,7 +261,8 @@ class InviteManager
             $guestName = $row[0].',';
 
             // Génére le QR code et fusionne avec l’image
-            $qrImagick = $this->generateQrCode($uniqueId);
+            $QRcodeUrl = 'https://anick-angemichel-loveland.com/api/invites/scan/' . $uniqueId;
+            $qrImagick = $this->generateQrCode($QRcodeUrl);
             $finalImagePath = $this->mergeQrCodeWithImage($qrImagick, $uniqueId, $guestName);
 
             // Met à jour la cellule dans la colonne F (colonne 5 = index 5)
