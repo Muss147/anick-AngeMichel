@@ -8,24 +8,28 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 #[Route('/api/invites')]
 class InviteController extends AbstractController
 {
     public function __construct(private InviteManager $inviteManager) {}
 
-    #[Route('/generate-all-colomns', name: 'generateAllColomns', methods: ['GET'])]
-    public function generateAllColomns(): JsonResponse
+    #[Route('', name: 'invite_dash', methods: ['GET'])]
+    public function dash(SessionInterface $session): Response
     {
-        $invites = $this->inviteManager->generateImagesForExistingInvites();
-        return $this->json($invites);
+        $session->set('menu', 'dash');
+        return $this->render('backend/dashboard.html.twig');
     }
 
-    #[Route('', name: 'invite_list', methods: ['GET'])]
-    public function list(): JsonResponse
+    #[Route('/liste', name: 'invite_list', methods: ['GET'])]
+    public function list(SessionInterface $session): Response
     {
+        $session->set('menu', 'liste');
         $invites = $this->inviteManager->listInvites();
-        return $this->json($invites);
+        return $this->render('backend/invites.html.twig', [
+            'invites' => $invites
+        ]);
     }
 
     #[Route('/entres', name: 'invite_list_entres', methods: ['GET'])]
@@ -80,5 +84,12 @@ class InviteController extends AbstractController
         }
 
         return $this->json($invite);
+    }
+
+    #[Route('/generate-all-colomns', name: 'generateAllColomns', methods: ['GET'])]
+    public function generateAllColomns(): JsonResponse
+    {
+        $invites = $this->inviteManager->generateImagesForExistingInvites();
+        return $this->json($invites);
     }
 }
