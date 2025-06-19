@@ -22,6 +22,13 @@ class InviteController extends AbstractController
         return $this->render('backend/dashboard.html.twig');
     }
 
+    #[Route('admin', name: 'info_admin', methods: ['GET', 'POST'])]
+    public function infoAdmin(SessionInterface $session): Response
+    {
+        $session->set('menu', 'admin');
+        return $this->render('backend/admin.html.twig');
+    }
+
     #[Route('/liste', name: 'invite_list', methods: ['GET'])]
     public function list(SessionInterface $session): Response
     {
@@ -32,42 +39,66 @@ class InviteController extends AbstractController
         ]);
     }
 
-    #[Route('/entres', name: 'invite_list_entres', methods: ['GET'])]
+    #[Route('/liste/entres', name: 'invite_list_entres', methods: ['GET'])]
     public function listEntres(): JsonResponse
     {
         $invites = $this->inviteManager->listCheckedInInvites();
         return $this->json($invites);
     }
 
-    #[Route('', name: 'invite_add', methods: ['POST'])]
-    public function add(Request $request): JsonResponse
+    #[Route('/liste/ajout', name: 'invite_add', methods: ['POST'])]
+    public function add(Request $request): Response
     {
-        $data = json_decode($request->getContent(), true);
-        if (!$data || !isset($data['Name'], $data['CountryCode'], $data['Phone'], $data['num_table'])) {
-            return $this->json(['error' => 'Missing required fields.'], Response::HTTP_BAD_REQUEST);
-        }
+        if ($request->isMethod('POST')) {
+            $data['name'] = $request->get('user_name');
+            $data['countryCode'] = $request->get('user_indicator');
+            $data['phone'] = $request->get('user_tel');
+            $data['num_table'] = $request->get('user_table');
 
-        $invite = $this->inviteManager->addInvite($data);
-        return $this->json($invite, Response::HTTP_CREATED);
+            $invite = $this->inviteManager->addInvite($data);
+            $this->addFlash('success', "L'invité <b>". $invite ."</b> a été ajouté avec succès.");
+        }
+        return $this->redirectToRoute('invite_list');
     }
 
-    #[Route('/{rowIndex}', name: 'invite_update', methods: ['PUT'])]
-    public function update(int $rowIndex, Request $request): JsonResponse
+    #[Route('/liste/modification', name: 'invite_update', methods: ['POST'])]
+    public function update(Request $request): Response
     {
-        $data = json_decode($request->getContent(), true);
-        if (!$data) {
-            return $this->json(['error' => 'Invalid data.'], Response::HTTP_BAD_REQUEST);
-        }
+        $rowIndex = $request->get('user_id') ?? null;
+        if ($request->isMethod('POST') && $rowIndex) {
+            $data['name'] = $request->get('user_name');
+            $data['countryCode'] = $request->get('user_indicator');
+            $data['phone'] = $request->get('user_tel');
+            $data['num_table'] = $request->get('user_table');
 
-        $invite = $this->inviteManager->updateInvite($rowIndex, $data);
-        return $this->json($invite);
+            $invite = $this->inviteManager->updateInvite($rowIndex, $data);
+            $this->addFlash('success', 'Modification effectuée avec succès.');
+        }
+        return $this->redirectToRoute('invite_list');
     }
 
-    #[Route('/{rowIndex}', name: 'invite_delete', methods: ['DELETE'])]
-    public function delete(int $rowIndex): JsonResponse
+    #[Route('/liste/delete/{rowIndex}', name: 'invite_delete', methods: ['POST'])]
+    public function delete(string $rowIndex, Request $request): Response
     {
-        $this->inviteManager->deleteInvite($rowIndex);
-        return $this->json(['message' => 'Invite deleted successfully.']);
+        if ($this->isCsrfTokenValid('delete'.$rowIndex, $request->getPayload()->getString('_token'))) {
+            $this->inviteManager->deleteInvite($rowIndex);
+        }
+        return $this->redirectToRoute('invite_list');
+    }
+
+    #[Route('/delete-users-selected', name: 'users_selected_delete', methods: ['POST'])]
+    public function deleteUsersSelected(Request $request, EntityManagerInterface $em, UsersRepository $usersRepository): Response
+    {
+        // Récupérer les données JSON de la requête
+        $data = json_decode($request->getContent(), true);
+
+        if ($request->isXmlHttpRequest()) {
+            foreach ($data['usersDeleted'] as $id) {
+                if ($user = $usersRepository->find($id)) $user->remove($this->getUser());
+                $em->flush();
+            }
+        }
+        return new JsonResponse(true, 200);
     }
 
     #[Route('/scan/{id}', name: 'invite_by_qr', methods: ['GET'])]

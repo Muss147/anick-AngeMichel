@@ -28,14 +28,14 @@ Contact: +225 07 471 612 21
 
 		<!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
 		<link href="{{asset('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css"/> 
-    <link href="{{asset('assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css"/>
+    	<link href="{{asset('assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css"/>
 		<!--end::Global Stylesheets Bundle-->
 
 		<script>
 			// Frame-busting to prevent site from being loaded within a frame without permission (click-jacking)
-      if (window.top != window.self) {
-        window.top.location.replace(window.self.location.href);
-      }
+			if (window.top != window.self) {
+				window.top.location.replace(window.self.location.href);
+			}
 		</script>
 	</head>
 	<!--end::Head-->
@@ -138,7 +138,7 @@ Contact: +225 07 471 612 21
 										<!--end::Hidden input-->
 
 										<!--begin::Icon-->
-											<i class="ki-duotone ki-magnifier fs-2 fs-lg-3 text-gray-800 position-absolute top-50 translate-middle-y ms-5"> <span class="path1"></span>
+										<i class="ki-duotone ki-magnifier fs-2 fs-lg-3 text-gray-800 position-absolute top-50 translate-middle-y ms-5"> <span class="path1"></span>
 											<span class="path2"></span>
 										</i>
 										<!--end::Icon-->
@@ -212,7 +212,7 @@ Contact: +225 07 471 612 21
 
 									<!--begin::Menu item-->
 									<div class="menu-item px-5">
-										<a href="" class="menu-link px-5">
+										<a href="{{path('info_admin')}}" class="menu-link px-5">
 											Mon profil
 										</a>
 									</div>
@@ -220,7 +220,7 @@ Contact: +225 07 471 612 21
 
 									<!--begin::Menu item-->
 									<div class="menu-item px-5">
-										<a href="" class="menu-link px-5">
+										<a href="{{path('info_admin')}}" class="menu-link px-5">
 											Mes réglages
 										</a>
 									</div>
@@ -356,34 +356,34 @@ Contact: +225 07 471 612 21
 								class="menu menu-column menu-lg-row menu-rounded menu-active-bg menu-title-gray-800 menu-state-primary menu-arrow-gray-500 fw-semibold my-5 my-lg-0 align-items-stretch flex-grow-1 px-2 px-lg-0" id="kt_header_menu" data-kt-menu="true">
 								<!--begin:Menu item-->
 								<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item{% if app.session.get('menu') == 'dash' %} here show menu-here-bg{% endif %} menu-lg-down-accordion me-0 me-lg-2">
-                  <!--begin:Menu link-->
-                  <span class="menu-link py-3">
+									<!--begin:Menu link-->
+									<a href="{{path('invite_dash')}}" class="menu-link py-3">
 										<span class="menu-title">Tableau de bord</span>
 										<span class="menu-arrow d-lg-none"></span>
-									</span>
-                  <!--end:Menu link-->
-                </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
-                <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item{% if app.session.get('menu') == 'liste' %} here show menu-here-bg{% endif %} menu-lg-down-accordion me-0 me-lg-2">
-                  <!--begin:Menu link-->
-                  <a href="{{path('invite_list')}}" class="menu-link py-3">
+									</a>
+									<!--end:Menu link-->
+									</div>
+									<!--end:Menu item-->
+									<!--begin:Menu item-->
+									<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item{% if app.session.get('menu') == 'liste' %} here show menu-here-bg{% endif %} menu-lg-down-accordion me-0 me-lg-2">
+									<!--begin:Menu link-->
+									<a href="{{path('invite_list')}}" class="menu-link py-3">
 										<span class="menu-title">Liste des invités</span>
 										<span class="menu-arrow d-lg-none"></span>
 									</a>
-                  <!--end:Menu link-->
-                </div>
-                <!--end:Menu item-->
-                <!--begin:Menu item-->
-                <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item{% if app.session.get('menu') == 'admins' %} here show menu-here-bg{% endif %} menu-lg-down-accordion me-0 me-lg-2">
-                  <!--begin:Menu link-->
-                  <a href="" class="menu-link py-3">
+									<!--end:Menu link-->
+									</div>
+									<!--end:Menu item-->
+									<!--begin:Menu item-->
+									<div data-kt-menu-trigger="{default: 'click', lg: 'hover'}" data-kt-menu-placement="bottom-start" class="menu-item{% if app.session.get('menu') == 'admins' %} here show menu-here-bg{% endif %} menu-lg-down-accordion me-0 me-lg-2">
+									<!--begin:Menu link-->
+									<a href="{{path('info_admin')}}" class="menu-link py-3">
 										<span class="menu-title">Administrateur</span>
 										<span class="menu-arrow d-lg-none"></span>
 									</a>
-                  <!--end:Menu link-->
-                </div>
-                <!--end:Menu item-->
+								<!--end:Menu link-->
+								</div>
+								<!--end:Menu item-->
 							</div>
 							<!--end::Menu-->
 						</div>
@@ -405,14 +405,14 @@ Contact: +225 07 471 612 21
 
 
 						<!--begin::Page title-->
-            {% block toolbarTitle %}{% endblock %}
+            			{% block toolbarTitle %}{% endblock %}
 						<!--end::Page title-->
 
 						<!--begin::Wrapper-->
 						<div
 							class="d-flex flex-align-items flex-wrap gap-3 gap-xl-0">
 							<!--begin::Users group-->
-							<div class="symbol-group symbol-hover flex-nowrap me-5">
+							{# <div class="symbol-group symbol-hover flex-nowrap me-5">
 								<div class="symbol symbol-35px symbol-circle" data-bs-toggle="tooltip" title="Alan Warden">
 									<span class="symbol-label bg-warning text-inverse-warning fw-bold">A</span>
 								</div>
@@ -435,15 +435,17 @@ Contact: +225 07 471 612 21
 									<img alt="Pic" src="{{asset('assets/media/svg/avatars/blank.svg')}}"/>
 								</div>
 
-							</div>
+							</div> #}
 							<!--end::Users group-->
 
 							<!--begin::Actions-->
+							{% if app.session.get('menu') != 'liste' %}
 							<div class="d-flex align-items-center flex-shrink-0">
 								<a href="{{path('invite_list')}}" class="btn btn-sm btn-flex btn-primary ms-5">
 									Liste des invités
 								</a>
 							</div>
+							{% endif %}
 							<!--end::Actions-->
 						</div>
 						<!--end::Wrapper-->
@@ -497,7 +499,7 @@ Contact: +225 07 471 612 21
 
 		<!--begin::Scrolltop-->
 		<div id="kt_scrolltop" class="scrolltop" data-kt-scrolltop="true">
-      <i class="ki-duotone ki-arrow-up">
+      		<i class="ki-duotone ki-arrow-up">
 				<span class="path1"></span>
 				<span class="path2"></span>
 			</i>
@@ -506,7 +508,7 @@ Contact: +225 07 471 612 21
 
 		<!--begin::Javascript-->
 		<!--begin::Global Javascript Bundle(mandatory for all pages)-->
-    <script src="{{asset('assets/plugins/global/plugins.bundle.js')}}"> </script>
+    	<script src="{{asset('assets/plugins/global/plugins.bundle.js')}}"> </script>
 		<script src="{{asset('assets/js/scripts.bundle.js')}}"></script>
 		<!--end::Global Javascript Bundle-->
 
@@ -514,7 +516,7 @@ Contact: +225 07 471 612 21
 		<script src="{{asset('assets/plugins/custom/datatables/datatables.bundle.js')}}"></script>
 		<!--end::Vendors Javascript-->
 
-    {% block javascripts %}{% endblock %}
+    	{% block javascripts %}{% endblock %}
 
 		<!--begin::Custom Javascript(used for this page only)-->
 		<script src="{{asset('assets/js/widgets.bundle.js')}}"></script>

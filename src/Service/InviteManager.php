@@ -67,7 +67,8 @@ class InviteManager
             'FALSE',
             date('Y-m-d'),
             '',
-            $uniqueId
+            $uniqueId,
+            'FALSE'
         ];
 
         $body = new Google_Service_Sheets_ValueRange([
@@ -107,7 +108,8 @@ class InviteManager
                     $row[7] ?? 'FALSE',
                     $row[8] ?? date('Y-m-d'),
                     $row[9] ?? '',
-                    $uniqueId
+                    $uniqueId,
+                    'FALSE'
                 ];
 
                 $body = new Google_Service_Sheets_ValueRange([
