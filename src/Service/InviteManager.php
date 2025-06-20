@@ -258,7 +258,7 @@ class InviteManager
             }
 
             // Récupère ou crée l'ID unique
-            $uniqueId = $row[10] ?? uniqid('invite_', true);
+            $uniqueId = $row[10] == '' ? uniqid('invite_', true) : $row[10];
             // Récupère le nom de l'invité
             $guestName = $row[0].',';
 
