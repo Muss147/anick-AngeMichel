@@ -632,6 +632,41 @@ Contact: +225 07 471 612 21
 			</svg>
 		</a>
 		<!-- back-to-top-end -->
+		
+		<!-- Modal -->
+		<div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content shadow-lg">
+					<div class="modal-body text-center p-0 p-sm-5">
+						<h2 class="mb-4">À votre attention !</h2>
+						<p class="mb-2">Votre présence à nos côtés est le plus beau des cadeaux. 💛</p>
+						<p class="mb-0">Si vous souhaitez nous témoigner une attention particulière, <b>une corbeille nuptiale</b> sera disponible le jour de la cérémonie.</p>
+						<p class="mt-2 text-muted" style="font-size: 0.9rem;">(Aucun cadeau matériel n’est attendu, seulement votre sourire ✨)</p>
+						<img src="{{asset('assets/media/icons/corbeille.png')}}" alt="Corbeille" class="mt-4">
+					</div>
+					<div class="modal-footer justify-content-center">
+						<button type="button" class="cus-btn d-xl-flex d-none" data-bs-dismiss="modal">
+							Ok, c'est compris
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
+								<g clip-path="url(#clip0_9589_953)">
+									<path d="M2.72936 16.4958C2.27959 16.046 1.88017 15.5685 1.52537 15.0762C0.909202 15.4623 0.452405 15.824 0.229889 16.0099C0.140545 16.0845 0.119405 16.2129 0.180061 16.3122C0.642483 17.0698 2.6544 20.0927 5.58245 20.5754C6.8769 20.7888 8.16086 20.4744 9.24972 20.0082C7.30656 19.5107 4.74123 18.5078 2.72936 16.4958Z" fill="#43273A"/>
+									<path d="M22.7655 15.0762C22.4107 15.5686 22.0112 16.0461 21.5615 16.4958C19.5495 18.5078 16.9843 19.5107 15.0411 20.0082C16.13 20.4744 17.4139 20.7888 18.7084 20.5754C21.6364 20.0927 23.6483 17.0698 24.1108 16.3122C24.1714 16.2129 24.1503 16.0846 24.0609 16.0099C23.8385 15.824 23.3817 15.4622 22.7655 15.0762Z" fill="#43273A"/>
+									<path d="M7.25844 10.7183C7.25844 10.2504 7.2891 9.79143 7.34427 9.34312C4.60846 7.43264 1.36358 7.00696 0.40527 6.92025C0.256957 6.90684 0.133066 7.03073 0.146473 7.17904C0.24852 8.3062 0.818848 12.5969 3.7236 15.5017C5.65527 17.4333 8.19955 18.3325 10.0191 18.7482C8.87502 17.0885 7.25844 14.1374 7.25844 10.7183Z" fill="#43273A"/>
+									<path d="M23.8857 6.92025C22.9274 7.00696 19.6825 7.43264 16.9467 9.34317C17.0019 9.79143 17.0325 10.2504 17.0325 10.7183C17.0325 14.1375 15.4159 17.0885 14.2718 18.7482C16.0914 18.3324 18.6357 17.4333 20.5674 15.5016C23.4721 12.5969 24.0425 8.30615 24.1445 7.179C24.1579 7.03073 24.034 6.90684 23.8857 6.92025Z" fill="#43273A"/>
+									<path d="M15.6263 10.718C15.6263 14.7589 13.0386 18.1401 12.3255 18.9951C12.2317 19.1076 12.0593 19.1076 11.9655 18.9951C11.2524 18.1401 8.66466 14.7589 8.66466 10.718C8.66466 6.67708 11.2524 3.29594 11.9655 2.44094C12.0593 2.32844 12.2317 2.32844 12.3255 2.44094C13.0386 3.29594 15.6263 6.67713 15.6263 10.718Z" fill="#43273A"/>
+								</g>
+								<defs>
+									<clipPath id="clip0_9589_943">
+										<rect width="24" height="24" fill="white" transform="translate(0.145508 -0.5)"/>
+									</clipPath>
+								</defs>
+							</svg>
+							<span></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<!-- Jquery Js -->
 		<script src="{{asset('assets/js/vendor/jquery-3.6.3.min.js')}}"></script>
@@ -645,6 +680,14 @@ Contact: +225 07 471 612 21
 
 		<script src="{{asset('assets/js/app.js')}}"></script>
 		<script type="text/javascript">
+			document.addEventListener("DOMContentLoaded", function () {
+				const myModal = new bootstrap.Modal(document.getElementById('welcomeModal'), {
+					backdrop: 'static',
+					keyboard: false
+				});
+				myModal.show();
+			});
+
 			{% for type, messages in app.flashes %}
 				{% for message in messages %}
 					alert('{{message}}')
