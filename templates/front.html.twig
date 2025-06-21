@@ -520,7 +520,7 @@ Contact: +225 07 471 612 21
 							</svg>
 						</button>
 						<div class="row blogs-slider">
-							{% for message in messages|reverse|slice(0,15) %}
+							{% for message in messages|reverse %}
 							<div class="col-lg-4">
 								<div class="blog-card">
 									<div class="text-block">
@@ -530,8 +530,17 @@ Contact: +225 07 471 612 21
 												<span class="bold-text color-primary">{{message.Nom}}</span>
 											</div>
 										</div>
-										<span class="title h4 mb-16">{{message.Lien}}</span>
-										<p class="mb-24" {% if message.Message|length >= 93 %}title="{{message.Message|raw}}"{% endif %}>“{{message.Message|raw}}”</p>
+										<span class="title h4 mb-16">{{ message.Lien|slice(0, 34) }}{{ message.Lien|length >= 34 ? '...' : '' }}</span>
+										<p class="mb-24">“{{message.Message|raw}}”</p>
+										{% if message.Message|length >= 93 %}
+										<a href="javascript:;" class="cus-btn" data-bs-toggle="modal" data-bs-target="#messageModal" data-id="{{message.Nom}}">
+											Lire plus
+											<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none">
+												<path d="M23.1946 4.93105L21.5122 4.93097V3.18948C21.5122 2.79078 21.2205 2.45203 20.8262 2.39304C20.7573 2.3827 19.1184 2.14464 17.1448 2.50375C14.9447 2.90407 13.19 3.8913 12 5.38374C10.8098 3.8913 9.05516 2.90407 6.85509 2.50375C4.88144 2.14472 3.24249 2.3827 3.17373 2.39304C2.77938 2.45211 2.48767 2.79086 2.48767 3.18948V4.93097H0.805331C0.360645 4.93097 0 5.29162 0 5.73639V20.9125C0 21.1733 0.126222 21.4179 0.338827 21.569C0.551432 21.7201 0.823997 21.7589 1.07022 21.6731C1.13066 21.6521 7.16563 19.5925 11.6657 21.6452C11.8781 21.7421 12.1219 21.7421 12.3343 21.6452C16.8218 19.5983 22.8697 21.6523 22.9298 21.6731C23.0161 21.7031 23.1055 21.7179 23.1945 21.7179C23.3596 21.7179 23.523 21.6672 23.6612 21.5691C23.8738 21.4179 24 21.1733 24 20.9126V5.73647C23.9999 5.2917 23.6394 4.93105 23.1946 4.93105ZM1.61074 19.8349V6.54172H2.48767V17.267C2.48767 17.501 2.59005 17.7233 2.7671 17.8762C2.94415 18.0292 3.17963 18.0978 3.41106 18.0636C3.4555 18.0572 6.95416 17.5768 9.51027 19.3306C6.36159 18.7922 3.21025 19.415 1.61074 19.8349ZM11.1946 18.6043C10.0688 17.5871 8.60239 16.8993 6.85509 16.5814C6.0142 16.4283 5.23408 16.3837 4.61025 16.3837C4.42504 16.3837 4.25356 16.3877 4.09849 16.3939V3.92904H4.09841C5.64628 3.85922 9.41168 4.02471 11.1946 7.04717V18.6043ZM12.8053 7.04725C14.5818 4.03772 18.3531 3.86471 19.9015 3.93106V16.3939C19.2241 16.3666 18.2353 16.3829 17.1448 16.5814C15.3975 16.8993 13.9311 17.587 12.8053 18.6043V7.04725ZM14.487 19.3311C17.0434 17.5763 20.5439 18.0571 20.5876 18.0635C20.8196 18.0984 21.0549 18.0302 21.2325 17.8773C21.4101 17.7242 21.5122 17.5015 21.5122 17.267V6.5418H22.3892V19.8349C20.7892 19.4148 17.6365 18.7918 14.487 19.3311Z"/>
+											</svg>
+											<span></span>
+										</a>
+										{% endif %}
 									</div>
 								</div>
 							</div>
@@ -668,6 +677,37 @@ Contact: +225 07 471 612 21
 			</div>
 		</div>
 
+		<div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content shadow-lg">
+					<div class="modal-body text-center p-0 p-sm-5">
+						<h6 class="mb-4"></h6>
+						<p class="mb-2"></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="cus-btn d-xl-flex d-none" data-bs-dismiss="modal">
+							Fermer
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="none">
+								<g clip-path="url(#clip0_9589_953)">
+									<path d="M2.72936 16.4958C2.27959 16.046 1.88017 15.5685 1.52537 15.0762C0.909202 15.4623 0.452405 15.824 0.229889 16.0099C0.140545 16.0845 0.119405 16.2129 0.180061 16.3122C0.642483 17.0698 2.6544 20.0927 5.58245 20.5754C6.8769 20.7888 8.16086 20.4744 9.24972 20.0082C7.30656 19.5107 4.74123 18.5078 2.72936 16.4958Z" fill="#43273A"/>
+									<path d="M22.7655 15.0762C22.4107 15.5686 22.0112 16.0461 21.5615 16.4958C19.5495 18.5078 16.9843 19.5107 15.0411 20.0082C16.13 20.4744 17.4139 20.7888 18.7084 20.5754C21.6364 20.0927 23.6483 17.0698 24.1108 16.3122C24.1714 16.2129 24.1503 16.0846 24.0609 16.0099C23.8385 15.824 23.3817 15.4622 22.7655 15.0762Z" fill="#43273A"/>
+									<path d="M7.25844 10.7183C7.25844 10.2504 7.2891 9.79143 7.34427 9.34312C4.60846 7.43264 1.36358 7.00696 0.40527 6.92025C0.256957 6.90684 0.133066 7.03073 0.146473 7.17904C0.24852 8.3062 0.818848 12.5969 3.7236 15.5017C5.65527 17.4333 8.19955 18.3325 10.0191 18.7482C8.87502 17.0885 7.25844 14.1374 7.25844 10.7183Z" fill="#43273A"/>
+									<path d="M23.8857 6.92025C22.9274 7.00696 19.6825 7.43264 16.9467 9.34317C17.0019 9.79143 17.0325 10.2504 17.0325 10.7183C17.0325 14.1375 15.4159 17.0885 14.2718 18.7482C16.0914 18.3324 18.6357 17.4333 20.5674 15.5016C23.4721 12.5969 24.0425 8.30615 24.1445 7.179C24.1579 7.03073 24.034 6.90684 23.8857 6.92025Z" fill="#43273A"/>
+									<path d="M15.6263 10.718C15.6263 14.7589 13.0386 18.1401 12.3255 18.9951C12.2317 19.1076 12.0593 19.1076 11.9655 18.9951C11.2524 18.1401 8.66466 14.7589 8.66466 10.718C8.66466 6.67708 11.2524 3.29594 11.9655 2.44094C12.0593 2.32844 12.2317 2.32844 12.3255 2.44094C13.0386 3.29594 15.6263 6.67713 15.6263 10.718Z" fill="#43273A"/>
+								</g>
+								<defs>
+									<clipPath id="clip0_9589_943">
+										<rect width="24" height="24" fill="white" transform="translate(0.145508 -0.5)"/>
+									</clipPath>
+								</defs>
+							</svg>
+							<span></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- Jquery Js -->
 		<script src="{{asset('assets/js/vendor/jquery-3.6.3.min.js')}}"></script>
 		<script src="{{asset('assets/js/vendor/bootstrap.min.js')}}"></script>
@@ -686,6 +726,23 @@ Contact: +225 07 471 612 21
 					keyboard: false
 				});
 				myModal.show();
+			});
+
+			const messages = {{ messages|map(m => {
+				nom: m.Nom,
+				lien: m.Lien,
+				text: m.Message
+			})|json_encode|raw }};
+
+			const editModal = document.getElementById('messageModal');
+
+			editModal.addEventListener('show.bs.modal', event => {
+				const messageId = event.relatedTarget.attributes['data-id'].value;
+				const message = messages.find(c => c.nom == messageId);
+				if (!message) return;
+
+				editModal.querySelector('.modal-body h6').innerHTML = message.nom + ' ( ' + message.lien + ' )';
+				editModal.querySelector('.modal-body p').innerHTML = message.text;
 			});
 
 			{% for type, messages in app.flashes %}
